@@ -1,13 +1,15 @@
 package Room;
 
-public class SingleRoom extends TypeOfRoom {
+import Hotel.PricePerRoom;
+import Hotel.Status;
 
-    private int rooms;
+public class SingleRoom extends TypeOfRoom implements PricePerRoom {
 
-    public SingleRoom(int rooms, String nameOfRooms) {
-        super(rooms, nameOfRooms);
+   private String nameOfRooms;
+
+    public SingleRoom(String nameOfRooms, Status statusRoom) {
+        super(nameOfRooms, statusRoom);
     }
-
     @Override
     public int numberOfRooms() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

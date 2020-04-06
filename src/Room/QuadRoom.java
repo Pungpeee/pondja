@@ -1,13 +1,16 @@
 
 package Room;
 
+import Hotel.PricePerRoom;
+import Hotel.Status;
 
-public class QuadRoom extends TypeOfRoom {
 
-    private int rooms;
+public class QuadRoom extends TypeOfRoom implements PricePerRoom{
 
-    public QuadRoom(int rooms, String nameOfRooms) {
-        super(rooms, nameOfRooms);
+    private String nameOfRooms;
+
+    public QuadRoom(String nameOfRooms, Status statusRoom) {
+        super(nameOfRooms, statusRoom);
     }
 
     @Override
