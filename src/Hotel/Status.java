@@ -4,5 +4,7 @@ package Hotel;
 
 public enum Status {
     AVAILABLE,
-    BOOKED,pod
+    BOOKED, pondloveboat
+  
+
 }
