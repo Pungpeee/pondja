@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/User/Desktop/pondjaa/src/Hotel/Status.java</file>
-=======
-            <file>file:/C:/Users/computer/Desktop/pondja/src/Hotel/Status.java</file>
->>>>>>> 4bfb01e6a58fd36a98fe13c47949da7c53b4f0da
+            <file>file:/C:/Users/1809/Desktop/pondja/src/DetailsOfBooked/KeycardStatus.java</file>
+            <file>file:/C:/Users/1809/Desktop/pondja/src/DetailsOfBooked/BookedRoom.java</file>
+            <file>file:/C:/Users/1809/Desktop/pondja/src/DetailsOfBooked/RoomForHotel.java</file>
+            <file>file:/C:/Users/1809/Desktop/pondja/src/Hotel/Guest.java</file>
+            <file>file:/C:/Users/1809/Desktop/pondja/src/DetailsOfBooked/Room.java</file>
         </group>
     </open-files>
 </project-private>
