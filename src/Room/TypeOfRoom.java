@@ -33,4 +33,5 @@ public abstract class TypeOfRoom implements PricePerRoom {
     
     public abstract int numberOfRooms();
     public abstract int emptyRoom();
+    public abstract boolean isAvailable();
 }
