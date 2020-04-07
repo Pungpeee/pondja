@@ -16,8 +16,11 @@ public class RoomPrice extends BookedRoom{
     private double payAmount;
     private KeycardStatus keycardStatus;
 
-    public RoomPrice() {
+    public RoomPrice(int maxCapacity) {
+        super(maxCapacity);
     }
+
+  
 
     public void checkInHotel() {
         this.keycardId = LocalDate.now() + "-" + runningId++;

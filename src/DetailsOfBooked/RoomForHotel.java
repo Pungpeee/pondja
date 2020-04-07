@@ -12,7 +12,7 @@ public class RoomForHotel extends TypeOfRoom{
     }
 
     public void assignKeycard() {
-        this.keycardT=new RoomPrice();
+        //this.keycardT=new RoomPrice();
         this.keycardT.checkInHotel();
     }
 
