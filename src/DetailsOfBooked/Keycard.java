@@ -1,18 +1,19 @@
 package DetailsOfBooked;
 
+import Room.RoomPrice;
 import Hotel.Status;
-import Room.TypeOfRoom;
+import Room.Hotel;
 
 
-public class RoomForHotel extends TypeOfRoom{
+public class Keycard extends Hotel{
     private RoomPrice keycardT;
 
-    public RoomForHotel(String nameOfRooms, Status statusRoom) {
+    public Keycard(String nameOfRooms, Status statusRoom) {
         super(nameOfRooms, statusRoom);
     }
 
     public void assignKeycard() {
-        //this.keycardT=new RoomPrice();
+        this.keycardT=new RoomPrice();
         this.keycardT.checkInHotel();
     }
 

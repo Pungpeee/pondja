@@ -1,5 +1,7 @@
-package DetailsOfBooked;
+package Room;
 
+import Room.BookedRoom;
+import DetailsOfBooked.KeycardStatus;
 import DetailsOfBooked.KeycardStatus;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -7,7 +9,7 @@ import java.time.LocalTime;
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
 
-public class RoomPrice extends BookedRoom{
+public class RoomPrice {
 
     private static int runningId;
     private String keycardId;
@@ -16,11 +18,9 @@ public class RoomPrice extends BookedRoom{
     private double payAmount;
     private KeycardStatus keycardStatus;
 
-    public RoomPrice(int maxCapacity) {
-        super(maxCapacity);
+    public RoomPrice() {
+        
     }
-
-  
 
     public void checkInHotel() {
         this.keycardId = LocalDate.now() + "-" + runningId++;
@@ -38,7 +38,8 @@ public class RoomPrice extends BookedRoom{
     private long calculateRoomPrice() {
         long days = ChronoUnit.DAYS.between(checkInTime, checkOutTime);
         System.out.println("Days :" + days);
-        return days*BookedRoom.ROOM_RATE;
+        //return days*BookedRoom.ROOM_RATE;
+        return 0;
     }
 
     @Override

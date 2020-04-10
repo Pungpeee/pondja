@@ -5,7 +5,7 @@ import Hotel.PricePerRoom;
 import Hotel.Status;
 
 
-public class DoubleRoom extends TypeOfRoom implements PricePerRoom{
+public class DoubleRoom extends Hotel implements PricePerRoom{
     
     private String nameOfRooms;
      private Status statusRoom;

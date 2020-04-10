@@ -3,7 +3,7 @@ package Room;
 import Hotel.PricePerRoom;
 import Hotel.Status;
 
-public class SuiteRoom extends TypeOfRoom implements PricePerRoom{
+public class SuiteRoom extends Hotel implements PricePerRoom{
 
     private String nameOfRooms;
      private Status statusRoom;

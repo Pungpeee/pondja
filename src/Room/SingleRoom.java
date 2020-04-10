@@ -3,7 +3,7 @@ package Room;
 import Hotel.PricePerRoom;
 import Hotel.Status;
 
-public class SingleRoom extends TypeOfRoom implements PricePerRoom {
+public class SingleRoom extends Hotel implements PricePerRoom {
 
    private String nameOfRooms;
     private Status statusRoom;
@@ -13,7 +13,7 @@ public class SingleRoom extends TypeOfRoom implements PricePerRoom {
     }
     @Override
     public int numberOfRooms() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return numberOfRooms();
     }
 
     @Override
