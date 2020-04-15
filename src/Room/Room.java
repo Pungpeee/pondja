@@ -1,19 +1,17 @@
 package Room;
 
 import DetailsOfBooked.Keycard;
-import DetailsOfBooked.Keycard;
-import Hotel.Status;
 
-public class Room extends Hotel{
+public class Room {
 
     private String nameOfRooms;
     private boolean available;
     private Keycard roomType;
 
-    public Room(String nameOfRooms, Status statusRoom) {
-        super(nameOfRooms, statusRoom);
-    }
-
+    public Room(String nameOfRooms) {
+        this.nameOfRooms = nameOfRooms;
+        available = true;
+    }  
     
 
     public void assignRoom(Keycard roomType) {
@@ -26,8 +24,8 @@ public class Room extends Hotel{
         return available;
     }
 
-    public int getRoom() {
-        return emptyRoom();
+    public Keycard getRoom(){
+        return roomType;
     }
 
     public void removeRoom() {
@@ -47,15 +45,4 @@ public class Room extends Hotel{
         }
         return str.toString();
     }
-
-    @Override
-    public int numberOfRooms() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public int emptyRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
