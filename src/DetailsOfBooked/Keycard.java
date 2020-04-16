@@ -25,4 +25,19 @@ public class Keycard extends Hotel{
     public String toString() {
         return super.toString()+ keycardT.toString();
     }
+
+    @Override
+    public int numberOfRooms() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int emptyRoom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isAvailable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

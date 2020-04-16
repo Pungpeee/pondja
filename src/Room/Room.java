@@ -1,9 +1,9 @@
+
 package Room;
 
 import DetailsOfBooked.Keycard;
 
 public class Room {
-
     private String nameOfRooms;
     private boolean available;
     private Keycard roomType;

@@ -3,15 +3,16 @@ package Room;
 import DetailsOfBooked.Keycard;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import Room.Room;
 
 
 public class BookedRoom {
 
-    private Room[] rooms;
+    private Hotel[] rooms;
     private int allBooked;
 
     public BookedRoom(int maxRoom) {
-        this.rooms = new Room[maxRoom];
+        this.rooms = new Rooms[maxRoom];
 
     }
     
@@ -47,13 +48,13 @@ public class BookedRoom {
         return -1;
     }
 
-    private int getAvailableRoom() {
-        for (int i = 0; i < rooms.length; i++) {
-            if(rooms[i].isAvailable())
-                return i;
-            }
-        return -1;
-    }
+//    private int getAvailableRoom() {
+//        for (int i = 0; i < rooms.length; i++) {
+//            if(rooms[i].isAvailable())
+//                return i;
+//            }
+//        return -1;
+//    }
 
     @Override
     public String toString() {
