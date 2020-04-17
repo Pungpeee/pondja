@@ -6,7 +6,7 @@ import Hotel.Status;
 
 public class Room {
    
-    protected final Status statusRoom;
+    protected Status statusRoom;
     private Keycard roomType;
 
     public Room(Status statusRoom) {
