@@ -7,8 +7,8 @@ import java.util.Objects;
 
 public abstract class Hotel implements PricePerRoom {
     
-    //private int nameOfRooms;
-    private final Status statusRoom;
+    private int nameOfRooms;
+    public final Status statusRoom;
     
 
     public Hotel(int nameOfRooms, Status statusRoom) {

@@ -12,6 +12,7 @@ public class DoubleRoom extends Hotel implements PricePerRoom{
 
     public DoubleRoom(String nameOfRooms, Status statusRoom) {
         super(nameOfRooms, statusRoom);
+        
     }
     
     @Override

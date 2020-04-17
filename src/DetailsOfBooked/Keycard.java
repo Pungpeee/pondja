@@ -8,7 +8,7 @@ import Room.Hotel;
 public class Keycard extends Hotel{
     private RoomPrice keycardT;
 
-    public Keycard(String nameOfRooms, Status statusRoom) {
+    public Keycard(int nameOfRooms, Status statusRoom) {
         super(nameOfRooms, statusRoom);
     }
 
