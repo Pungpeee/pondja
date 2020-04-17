@@ -17,10 +17,7 @@ public abstract class Hotel implements PricePerRoom {
         
     }
 
-    public Status getStatusRoom() {
-        return statusRoom;
-    }
-    
+   
     
     @Override
     public String toString() {
