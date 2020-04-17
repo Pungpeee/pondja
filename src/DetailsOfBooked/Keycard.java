@@ -8,7 +8,7 @@ import Room.Hotel;
 public class Keycard extends Hotel{
     private RoomPrice keycardT;
 
-    public Keycard(String nameOfRooms, Status statusRoom) {
+    public Keycard(int nameOfRooms, Status statusRoom) {
         super(nameOfRooms, statusRoom);
     }
 
@@ -24,5 +24,20 @@ public class Keycard extends Hotel{
     @Override
     public String toString() {
         return super.toString()+ keycardT.toString();
+    }
+
+    @Override
+    public int numberOfRooms() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int emptyRoom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isAvailable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

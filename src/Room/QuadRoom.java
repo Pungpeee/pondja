@@ -5,30 +5,39 @@ import Hotel.Status;
 
 public class QuadRoom extends Hotel implements PricePerRoom {
 
-    private String nameOfRooms;
-    private Status statusRoom;
+    private int countEmptyRooms;
+    protected final int maxrooms = 10;
+    private Room[] rooms;
 
-    public QuadRoom(String nameOfRooms, Status statusRoom) {
+    public QuadRoom(int nameOfRooms, Status statusRoom, int countEmptyRooms, Room[] rooms) {
         super(nameOfRooms, statusRoom);
+        this.countEmptyRooms = countEmptyRooms;
+        this.rooms = rooms;
     }
 
     @Override
     public int numberOfRooms() {
-        int[] rooms = new int[]{301, 302, 303, 304, 305, 306, 307, 308, 309, 310};
-        for (int i = 0; i < rooms.length; i++) {
-            System.out.println("names[" + i + "] = " + rooms[i]);
+        for (int i = 0; i < maxrooms; i++) {
+            return maxrooms;
         }
-        return rooms.length;
-    }
+        return -1;
 
-    @Override
-    public int emptyRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public boolean isAvailable() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (int i = 0; i < maxrooms; i++) {
+            if (rooms[i].getStatusRoom() == Status.AVAILABLE) {
+                countEmptyRooms++;
+
+            }
+            return true;
+        }
+        return false;
     }
 
+    @Override
+    public int emptyRoom() {
+        return countEmptyRooms;
+    }
 }

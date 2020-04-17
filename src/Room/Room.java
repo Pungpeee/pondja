@@ -1,48 +1,26 @@
+
 package Room;
 
 import DetailsOfBooked.Keycard;
+import Hotel.Status;
 
 public class Room {
-
-    private String nameOfRooms;
-    private boolean available;
+   
+    protected Status statusRoom;
     private Keycard roomType;
 
-    public Room(String nameOfRooms) {
-        this.nameOfRooms = nameOfRooms;
-        available = true;
-    }  
-    
-
-    public void assignRoom(Keycard roomType) {
-        this.roomType = roomType;
-        this.available = false;
-
+    public Room(Status statusRoom) {
+        this.statusRoom = statusRoom;
     }
 
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public Keycard getRoom(){
-        return roomType;
-    }
-
-    public void removeRoom() {
-
-        this.roomType = null;
-        this.available = true;
-
+    public Status getStatusRoom() {
+        return statusRoom;
     }
 
     @Override
     public String toString() {
-
-        StringBuilder str = new StringBuilder();
-        str.append("Room" + "KeycardId =" + nameOfRooms + ":" + "Available: " + available);
-        if (available == false) {
-            str.append(" " + roomType.toString() + '}');
-        }
-        return str.toString();
+        return "Room{" + "statusRoom=" + statusRoom + ", roomType=" + roomType + '}';
     }
+    
+ 
 }

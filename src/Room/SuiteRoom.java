@@ -3,33 +3,40 @@ package Room;
 import Hotel.PricePerRoom;
 import Hotel.Status;
 
-public class SuiteRoom extends Hotel implements PricePerRoom{
+public class SuiteRoom extends Hotel implements PricePerRoom {
 
-    private String nameOfRooms;
-     private Status statusRoom;
+    private int countEmptyRooms;
+    protected final int maxrooms = 10;
+    private Room[] rooms;
 
-    public SuiteRoom(String nameOfRooms, Status statusRoom) {
+    public SuiteRoom(int nameOfRooms, Status statusRoom, int countEmptyRooms, Room[] rooms) {
         super(nameOfRooms, statusRoom);
+        this.countEmptyRooms = countEmptyRooms;
+        this.rooms = rooms;
     }
 
     @Override
     public int numberOfRooms() {
-        int[] rooms = new int[]{401, 402, 403, 404, 405, 406, 407, 408, 409, 410};
-        for (int i = 0; i < rooms.length; i++) {
-            System.out.println("names[" + i + "] = " + rooms[i]);
+        for (int i = 0; i < maxrooms; i++) {
+            return maxrooms;
         }
-        return rooms.length;
-    }
-    
-
-    @Override
-    public int emptyRoom() {
-        
+        return -1;
     }
 
     @Override
     public boolean isAvailable() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (int i = 0; i < maxrooms; i++) {
+            if (rooms[i].getStatusRoom() == Status.AVAILABLE) {
+                countEmptyRooms++;
+
+            }
+            return true;
+        }
+        return false;
     }
 
+    @Override
+    public int emptyRoom() {
+        return countEmptyRooms;
+    }
 }

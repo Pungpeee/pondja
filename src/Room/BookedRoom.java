@@ -3,12 +3,14 @@ package Room;
 import Room.SingleRoom;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import Room.Room;
 
 
 public class BookedRoom {
 
-    private Room[] rooms;
+    private Hotel[] rooms;
     private int allBooked;
+
 
     public BookedRoom() {
     }
@@ -16,12 +18,14 @@ public class BookedRoom {
     public void setName() {
         System.out.println("");
         System.out.print("Name : ");
+
     }
-    
     public void setTypeOfRoom() {
         System.out.println("");
         System.out.print("What do you want type of room? : ");
-        if()
+        if(){
+            
+        }
     }
     
     public void setTotalOfRoom() {
@@ -55,7 +59,7 @@ public class BookedRoom {
             booked.emptyRoom();
         } 
     }
-    
+
     public void checkInSuiteRoom(SuiteRoom booked){
         int availableRoom = booked.emptyRoom();
         if(availableRoom <= 0){
@@ -64,6 +68,16 @@ public class BookedRoom {
             booked.emptyRoom();
         } 
     }
+
+
+//    private int getAvailableRoom() {
+//        for (int i = 0; i < rooms.length; i++) {
+//            if(rooms[i].isAvailable())
+//                return i;
+//            }
+//        return -1;
+//    }
+
 
 //    public BookedRoom(int maxRoom) {
 //        this.rooms = new Room[maxRoom];

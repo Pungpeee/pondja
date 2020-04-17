@@ -3,7 +3,7 @@ package Hotel;
 
 
 public enum Status {
-    AVAILABLE,
+ AVAILABLE,
 BOOKED
   
 
