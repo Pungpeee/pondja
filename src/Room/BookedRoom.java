@@ -22,7 +22,7 @@ public class BookedRoom {
     }
     public void setTypeOfRoom() {
         System.out.println("");
-        System.out.print("What do you want type of room? : ");
+        System.out.print("What type of room do you want ? : ");
         if(){
             
         }
@@ -30,13 +30,13 @@ public class BookedRoom {
     
     public void setTotalOfRoom() {
         System.out.println("");
-        System.out.print("How .... : ");
+        System.out.print(" : ");
     }
     
     public void checkInSingleRoom(SingleRoom booked){
         int availableRoom = booked.emptyRoom();
         if(availableRoom <= 0){
-            System.out.println("Don't have room is Available");
+            System.out.println("Sorry,single room is Unavailable");
         }else{
             booked.emptyRoom();
         } 
@@ -45,7 +45,7 @@ public class BookedRoom {
     public void checkInDoubleRoom(DoubleRoom booked){
         int availableRoom = booked.emptyRoom();
         if(availableRoom <= 0){
-            System.out.println("Don't have room is Available");
+            System.out.println("Sorry,double room is Unavailable");
         }else{
             booked.emptyRoom();
         } 
@@ -54,7 +54,7 @@ public class BookedRoom {
     public void checkInQuadRoom(QuadRoom booked){
         int availableRoom = booked.emptyRoom();
         if(availableRoom <= 0){
-            System.out.println("Don't have room is Available");
+            System.out.println("Sorry,quad room is Unavailable");
         }else{
             booked.emptyRoom();
         } 
@@ -63,7 +63,7 @@ public class BookedRoom {
     public void checkInSuiteRoom(SuiteRoom booked){
         int availableRoom = booked.emptyRoom();
         if(availableRoom <= 0){
-            System.out.println("Don't have room is Available");
+            System.out.println("Sorry,suite room is Unavailable");
         }else{
             booked.emptyRoom();
         } 
