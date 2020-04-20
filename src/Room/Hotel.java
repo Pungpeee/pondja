@@ -10,14 +10,13 @@ public abstract class Hotel implements PricePerRoom {
     private int nameOfRooms;
     public final Status statusRoom;
     
+    
 
     public Hotel(int nameOfRooms, Status statusRoom) {
         this.nameOfRooms = nameOfRooms;
         this.statusRoom = statusRoom;
         
     }
-
-   
     
     @Override
     public String toString() {
@@ -29,6 +28,5 @@ public abstract class Hotel implements PricePerRoom {
     
     
     public abstract int numberOfRooms();
-    public abstract int emptyRoom();
-    public abstract boolean isAvailable();
+    public abstract int isAvailable();
 }

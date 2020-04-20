@@ -6,17 +6,15 @@ import java.util.Scanner;
 public class Guest {
     private String firstname;
     private String surname;
-    private int rooms;
     Scanner IP_name = new Scanner(System.in);
 
-    public Guest(String firstname, String surname, int rooms) {
+    public Guest() {
+    
+    }
+    
+    public Guest(String firstname, String surname) {
         this.firstname = firstname;
         this.surname = surname;
-        this.rooms = rooms;
-    }
-
-    public Guest() {
-        
     }
 
     public String getFirstname() {
@@ -25,10 +23,6 @@ public class Guest {
 
     public String getSurname() {
         return surname;
-    }
-
-    public int getRooms() {
-        return rooms;
     }
 
     public void setFirstname() {
@@ -42,10 +36,9 @@ public class Guest {
         
     }
 
-    public void setRooms(int rooms) {
-        this.rooms = rooms;
-    }
-    
-    
+    @Override
+    public String toString() {
+        return "Guest{" + "firstname=" + firstname + ", surname=" + surname + '}';
+    }   
     
 }

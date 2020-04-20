@@ -6,7 +6,7 @@ import Hotel.Status;
 public class QuadRoom extends Hotel implements PricePerRoom {
 
     private int countEmptyRooms;
-    protected final int maxrooms = 10;
+    public int maxrooms = 10;
     private Room[] rooms;
 
     public QuadRoom(int nameOfRooms, Status statusRoom, int countEmptyRooms, Room[] rooms) {
