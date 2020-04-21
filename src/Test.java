@@ -1,4 +1,5 @@
 
+import static Database.DB.testDB;
 import Hotel.Guest;
 import Room.BookedRoom;
 import Room.DoubleRoom;
@@ -19,11 +20,14 @@ public class Test {
         QuadRoom qr = new QuadRoom();
         SuiteRoom se = new SuiteRoom();
         Scanner num = new Scanner(System.in);
+        
 
         
             System.out.println("--------------------<< Booked Room >>----------------------");
+            
             g.setFirstname();
             g.setSurname();
+            testDB(g.getFirstname(),g.getSurname());
         do {
             System.out.println("");
             System.out.println("Choose type of room you want");
