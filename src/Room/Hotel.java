@@ -22,11 +22,4 @@ public abstract class Hotel implements PricePerRoom {
     public String toString() {
         return "TypeOfRoom{" + "nameOfRooms=" + nameOfRooms + ", statusRoom=" + statusRoom + '}';
     }
-
-    
-
-    
-    
-    public abstract int numberOfRooms();
-    public abstract int isAvailable();
 }

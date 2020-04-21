@@ -16,6 +16,10 @@ public class Room {
     public Status getStatusRoom() {
         return statusRoom;
     }
+    
+    public void addData(){
+        
+    }
 
     @Override
     public String toString() {
