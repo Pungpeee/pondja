@@ -9,7 +9,7 @@ public class SingleRoom {
 
     protected int countEmptyRooms = 0;
     protected int maxrooms = 10;
-//    private Room[] rooms;
+    private Room[] rooms;
     Scanner input = new Scanner(System.in);
 
     public SingleRoom() {
@@ -19,12 +19,11 @@ public class SingleRoom {
     public void checkInSingleRoom() {
         int maxrooms;
         int countEmptyRooms;
-        int[] rooms = new int[10];
+
 
         for (int total = 0; total < rooms.length; total++) {
             System.out.print(" Total : ");
-            total = input.nextInt(); 
-
+            total = input.nextInt();              
         
             if (total >= 1 && total <= 10) {
                 System.out.println("Status : " + Status.BOOKED);
@@ -37,7 +36,5 @@ public class SingleRoom {
             }return ;
         }
 
-    }
-    
-    
+    }   
 }

@@ -24,14 +24,15 @@ public class Test {
 
         
             System.out.println("--------------------<< Booked Room >>----------------------");
-            
             g.setFirstname();
             g.setSurname();
             testDB(g.getFirstname(),g.getSurname());
+
+            System.out.println();
         do {
             System.out.println("");
             System.out.println("Choose type of room you want");
-            System.out.println("1. Single Room : Total "  +  "rooms");
+            System.out.println("1. Single Room : Total 10 rooms");
             System.out.println("2. Double Room : Total 10 rooms");
             System.out.println("3. Quad Room : Total 10 rooms");
             System.out.println("4. Suite Room : Total 10 rooms");
@@ -43,23 +44,23 @@ public class Test {
             if (number == 1) {
                 System.out.println("Single Room");
                 sr.checkInSingleRoom();
-                System.out.println("Thank you");
+
 
             } else if (number == 2) {
                 System.out.println("Double Room");
                 dr.checkInDoubleRoom();
-                System.out.println("Thank you");
+
 
             } else if (number == 3) {
                 System.out.println("Quad Room");
                 qr.checkInQuadRoom();
-                System.out.println("Thank you");
+
 
 
             } else if (number == 4) {
                 System.out.println("Suite Room");
                 se.checkInSuiteRoom();
-                System.out.println("Thank you");
+
 
 
             } else if (number == 5) {

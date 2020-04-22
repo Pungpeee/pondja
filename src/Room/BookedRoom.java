@@ -8,10 +8,10 @@ import Room.Room;
 import java.util.Scanner;
 import Hotel.Status;
 
+public class BookedRoom implements PricePerRoom {
 
-public class BookedRoom implements PricePerRoom{
     private String nameCustomer;
-    private Hotel[] rooms;
+    private Room[] rooms;
     private int booked;
     private SingleRoom singleRoom;
     private DoubleRoom doubleRoom;
@@ -20,14 +20,20 @@ public class BookedRoom implements PricePerRoom{
     Scanner input = new Scanner(System.in);
 
     public BookedRoom() {
-       
-    }
-    
 
-    
+    }
+
+//    public boolean isCheck() {
+//        int type;
+//        if (type == rooms[i].getFirstname()) {
+//            System.out.println("This club has this ID already");
+//            return false;
+//        }
+//    }
+
     @Override
     public String toString() {
-        return "BookedRoom :" + "nameCustomer =" + nameCustomer + "rooms =" + rooms + "booked =" + booked + "singleRoom =" + singleRoom + "doubleRoom =" + doubleRoom + "quadRoom =" + quadRoom + "suiteRoom =" + suiteRoom ;
-    }       
+        return "BookedRoom :" + "nameCustomer =" + nameCustomer + "rooms =" + rooms + "booked =" + booked + "singleRoom =" + singleRoom + "doubleRoom =" + doubleRoom + "quadRoom =" + quadRoom + "suiteRoom =" + suiteRoom;
+    }
 
 }
