@@ -1,7 +1,13 @@
 package Room;
 
 import Hotel.PricePerRoom;
+import static Hotel.PricePerRoom.PRICE_SuiteRoom;
 import Hotel.Status;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.Scanner;
 
 public class SuiteRoom {
@@ -9,6 +15,14 @@ public class SuiteRoom {
     protected int maxrooms = 10;
     private Room[] rooms;
     Scanner input = new Scanner(System.in);
+    
+    private static int runningId=1;
+    private String keycardId;
+    private LocalDateTime checkIn;
+    private LocalDateTime checkOut;
+    private double payedAmount;
+    private Status keycardStatus;
+
 
     public SuiteRoom() {
     }
@@ -35,4 +49,25 @@ public class SuiteRoom {
         }
 
     }
+     public void checkInForSuiteRoom(){
+        this.keycardId = LocalDate.now()+"-"+runningId++;
+        LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+        //this.checkIn = LocalDateTime.of(2020, Month.FEBRUARY, 28, 16, 10);
+        keycardStatus = keycardStatus.BOOKED;
+    }
+     public void checkOut(){
+        this.checkOut = LocalDateTime.now();
+        this.payedAmount = calculateRoomDays();
+        //System.out.println("Pay Amount:" +this.payedAmount);
+        keycardStatus = keycardStatus.AVAILABLE;
+        System.out.println(toString());
+        
+    }
+    public long calculateRoomDays(){  
+        
+            long days = ChronoUnit.DAYS.between(checkIn, checkOut);
+        System.out.println("Days: "+days);
+        return days * PRICE_SuiteRoom;
+        }
+     
 }

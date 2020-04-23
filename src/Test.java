@@ -6,6 +6,7 @@ import Room.DoubleRoom;
 import Room.QuadRoom;
 import Room.SingleRoom;
 import Room.SuiteRoom;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Test {
@@ -20,15 +21,13 @@ public class Test {
         QuadRoom qr = new QuadRoom();
         SuiteRoom se = new SuiteRoom();
         Scanner num = new Scanner(System.in);
-        
+
+        System.out.println("--------------------<< Booked Room >>----------------------");
+        g.setFirstname();
+        g.setSurname();
+        testDB(g.getFirstname(), g.getSurname());
 
         
-            System.out.println("--------------------<< Booked Room >>----------------------");
-            g.setFirstname();
-            g.setSurname();
-            testDB(g.getFirstname(),g.getSurname());
-
-            System.out.println();
         do {
             System.out.println("");
             System.out.println("Choose type of room you want");
@@ -38,30 +37,28 @@ public class Test {
             System.out.println("4. Suite Room : Total 10 rooms");
             System.out.println("5. EXIT");
             System.out.print("You choose : ");
-
-            number = num.nextInt();
+            try {
+                number = num.nextInt();
 
             if (number == 1) {
                 System.out.println("Single Room");
                 sr.checkInSingleRoom();
-
+                
+                sr.checkInForSingleRoom();
+                sr.checkOut();
+                sr.calculateRoomDays();
 
             } else if (number == 2) {
                 System.out.println("Double Room");
                 dr.checkInDoubleRoom();
 
-
             } else if (number == 3) {
                 System.out.println("Quad Room");
                 qr.checkInQuadRoom();
 
-
-
             } else if (number == 4) {
                 System.out.println("Suite Room");
                 se.checkInSuiteRoom();
-
-
 
             } else if (number == 5) {
                 System.out.println("Thank you");
@@ -69,9 +66,19 @@ public class Test {
 
             } else {
                 System.out.println("Please try again");
+                
             }
+            
+             } catch (InputMismatchException p){
+                
+                 System.out.println("Please insert number only.");
+                 break;
+                 
+                }
+            
+           
         } while (number != 6);
-
+          
     }
 
 }

@@ -7,10 +7,15 @@ import java.util.Objects;
 import Room.Room;
 import java.util.Scanner;
 import Hotel.Status;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 public class BookedRoom implements PricePerRoom {
 
-    private String nameCustomer;
     private Room[] rooms;
     private int booked;
     private SingleRoom singleRoom;
@@ -18,9 +23,66 @@ public class BookedRoom implements PricePerRoom {
     private QuadRoom quadRoom;
     private SuiteRoom suiteRoom;
     Scanner input = new Scanner(System.in);
+    
+    private static int runningId=1;
+    private String keycardId;
+    private LocalDateTime checkIn;
+    private LocalDateTime checkOut;
+    private double payedAmount;
+    private Status keycardStatus;
 
-    public BookedRoom() {
+  
+     public void checkInForSingleRoom(){
+        this.keycardId = LocalDate.now()+"-"+runningId++;
+        LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+        //this.checkIn = LocalDateTime.of(2020, Month.FEBRUARY, 28, 16, 10);
+        keycardStatus = keycardStatus.BOOKED;
+    }
+    public void checkInForDoubleRoom(){
+        this.keycardId = LocalDate.now()+"-"+runningId++;
+        LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+        //this.checkIn = LocalDateTime.of(2020, Month.FEBRUARY, 28, 16, 10);
+        keycardStatus = keycardStatus.BOOKED;
+    }
+    public void checkInForQuadRoom(){
+        this.keycardId = LocalDate.now()+"-"+runningId++;
+        LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+        //this.checkIn = LocalDateTime.of(2020, Month.FEBRUARY, 28, 16, 10);
+        keycardStatus = keycardStatus.BOOKED;
+    }
+    public void checkInForSuiteRoom(){
+        this.keycardId = LocalDate.now()+"-"+runningId++;
+        LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+        //this.checkIn = LocalDateTime.of(2020, Month.FEBRUARY, 28, 16, 10);
+        keycardStatus = keycardStatus.BOOKED;
+    }
+     
+    
+    public void checkOut(){
+        this.checkOut = LocalDateTime.now();
+        this.payedAmount = calculateRoomDays();
+        //System.out.println("Pay Amount:" +this.payedAmount);
+        keycardStatus = keycardStatus.AVAILABLE;
+        System.out.println(toString());
+        
+    }
+    private long calculateRoomDays(){  
+        
+            long days = ChronoUnit.DAYS.between(checkIn, checkOut);
+        System.out.println("Days: "+days);
+        return days * PRICE_SingleRoom;
+        }
+        
+    }
+    
+    
+    
 
+    @Override
+    public String toString() {
+        return "BookedRoom{" + "rooms=" + rooms + ", booked=" + booked + ", singleRoom=" + singleRoom + ", doubleRoom=" + doubleRoom + ", quadRoom=" + quadRoom + ", suiteRoom=" + suiteRoom + ", input=" + input + ", keycardId=" + keycardId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", payedAmount=" + payedAmount + ", keycardStatus=" + keycardStatus + '}';
+    }
+    
     }
 
 //    public boolean isCheck() {
@@ -31,9 +93,6 @@ public class BookedRoom implements PricePerRoom {
 //        }
 //    }
 
-    @Override
-    public String toString() {
-        return "BookedRoom :" + "nameCustomer =" + nameCustomer + "rooms =" + rooms + "booked =" + booked + "singleRoom =" + singleRoom + "doubleRoom =" + doubleRoom + "quadRoom =" + quadRoom + "suiteRoom =" + suiteRoom;
-    }
+    
 
-}
+

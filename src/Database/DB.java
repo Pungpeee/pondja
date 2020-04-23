@@ -13,8 +13,6 @@ public class DB {
 
     public static void testDB(String name, String sname) {
 
-       
-
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Hotel", "hotel", "123");
