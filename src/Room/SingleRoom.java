@@ -19,6 +19,7 @@ public class SingleRoom {
     public void checkInSingleRoom() {
         int maxrooms;
         int countEmptyRooms;
+        int[] rooms = new int[10];
 
 
         for (int total = 0; total < rooms.length; total++) {
