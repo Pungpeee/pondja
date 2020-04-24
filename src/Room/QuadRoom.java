@@ -11,9 +11,8 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class QuadRoom {
-    protected int countEmptyRooms = 0;
-    protected int maxrooms = 10;
-    private Room[] rooms;
+    public int countEmptyRooms = 0;
+    public int maxrooms = 10;
     Scanner input = new Scanner(System.in);
     
     private static int runningId=1;
@@ -29,22 +28,24 @@ public class QuadRoom {
     public void checkInQuadRoom() {
         int maxrooms;
         int countEmptyRooms;
-        int[] rooms = new int[10];
-
-        for (int total = 0; total < rooms.length; total++) {
+        for (int total = 0; total < this.maxrooms; total++) {
             System.out.print(" Total : ");
-            total = input.nextInt(); 
-            
-        
+            total = input.nextInt();
+
             if (total >= 1 && total <= 10) {
                 System.out.println("Status : " + Status.BOOKED);
                 maxrooms = this.maxrooms - total;
+                this.maxrooms = this.maxrooms - total;
                 System.out.println("NOW!! Total of room is AVAILABLE = " + maxrooms);
                 countEmptyRooms = this.countEmptyRooms + total;
+                this.countEmptyRooms = this.countEmptyRooms + total;
                 System.out.println("NOW!! Total of room is BOOKED = " + countEmptyRooms);
+                return;
             } else if (total > 10) {
                 System.out.println("You can't booked");
-            }return ;
+                return;
+            }
+
         }
 
     }

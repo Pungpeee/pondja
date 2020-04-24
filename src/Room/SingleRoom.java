@@ -14,11 +14,10 @@ import java.util.Scanner;
 
 public class SingleRoom {
 
-    protected int countEmptyRooms = 0;
-    protected int maxrooms = 10;
-    private Room[] rooms;
+    public int countEmptyRooms = 0;
+    public int maxrooms = 10;
     Scanner input = new Scanner(System.in);
-
+    
     private static int runningId = 1;
     private String keycardId;
     private LocalDate checkIn;
@@ -33,24 +32,25 @@ public class SingleRoom {
     public void checkInSingleRoom() {
         int maxrooms;
         int countEmptyRooms;
-        int[] rooms = new int[10];
-
-        for (int total = 0; total < rooms.length; total++) {
+        for (int total = 0; total < this.maxrooms; total++) {
             System.out.print(" Total : ");
             total = input.nextInt();
 
             if (total >= 1 && total <= 10) {
                 System.out.println("Status : " + Status.BOOKED);
                 maxrooms = this.maxrooms - total;
+                this.maxrooms = this.maxrooms - total;
                 System.out.println("NOW!! Total of room is AVAILABLE = " + maxrooms);
                 countEmptyRooms = this.countEmptyRooms + total;
+                this.countEmptyRooms = this.countEmptyRooms + total;
                 System.out.println("NOW!! Total of room is BOOKED = " + countEmptyRooms);
+                return;
             } else if (total > 10) {
                 System.out.println("You can't booked");
+                return;
             }
-            return;
-        }
 
+        }
     }
 
     public void checkInForSingleRoom(int days) {
@@ -82,7 +82,7 @@ public class SingleRoom {
 
     @Override
     public String toString() {
-        return "SingleRoom{" + "countEmptyRooms=" + countEmptyRooms + ", maxrooms=" + maxrooms + ", rooms=" + rooms + ", input=" + input + ", keycardId=" + keycardId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", payedAmount=" + payedAmount + ", keycardStatus=" + keycardStatus + '}';
+        return "SingleRoom{" + "countEmptyRooms=" + countEmptyRooms + ", maxrooms=" + maxrooms + ", input=" + input + ", keycardId=" + keycardId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", payedAmount=" + payedAmount + ", keycardStatus=" + keycardStatus + '}';
     }
         
     }

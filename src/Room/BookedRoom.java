@@ -78,12 +78,6 @@ public class BookedRoom implements PricePerRoom {
     
     
 
-    @Override
-    public String toString() {
-        return "BookedRoom{" + "rooms=" + rooms + ", booked=" + booked + ", singleRoom=" + singleRoom + ", doubleRoom=" + doubleRoom + ", quadRoom=" + quadRoom + ", suiteRoom=" + suiteRoom + ", input=" + input + ", keycardId=" + keycardId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", payedAmount=" + payedAmount + ", keycardStatus=" + keycardStatus + '}';
-    }
-    
-    }
 
 //    public boolean isCheck() {
 //        int type;
