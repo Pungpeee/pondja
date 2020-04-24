@@ -23,11 +23,10 @@ public class Test {
         Scanner num = new Scanner(System.in);
 
         System.out.println("--------------------<< Booked Room >>----------------------");
-        g.setFirstname();
-        g.setSurname();
-        testDB(g.getFirstname(), g.getSurname());
+        //g.setFirstname();
+        //g.setSurname();
+        //testDB(g.getFirstname(), g.getSurname());
 
-        
         do {
             System.out.println("");
             System.out.println("Choose type of room you want");
@@ -38,47 +37,48 @@ public class Test {
             System.out.println("5. EXIT");
             System.out.print("You choose : ");
             try {
+                int number;
                 number = num.nextInt();
 
-            if (number == 1) {
-                System.out.println("Single Room");
-                sr.checkInSingleRoom();
-                
-                sr.checkInForSingleRoom();
-                sr.checkOut();
-                sr.calculateRoomDays();
+                if (number == 1) {
+                    System.out.println("Single Room");
+                    sr.checkInSingleRoom();
+                    sr.checkInForSingleRoom(1);
+                    sr.checkOut();
+                    sr.calculateRoomDays();
 
-            } else if (number == 2) {
-                System.out.println("Double Room");
-                dr.checkInDoubleRoom();
+                } else if (number == 2) {
+                    System.out.println("Double Room");
+                    dr.checkInDoubleRoom();
 
-            } else if (number == 3) {
-                System.out.println("Quad Room");
-                qr.checkInQuadRoom();
+                } else if (number == 3) {
+                    System.out.println("Quad Room");
+                    qr.checkInQuadRoom();
 
-            } else if (number == 4) {
-                System.out.println("Suite Room");
-                se.checkInSuiteRoom();
+                } else if (number == 4) {
+                    System.out.println("Suite Room");
+                    se.checkInSuiteRoom();
 
-            } else if (number == 5) {
-                System.out.println("Thank you");
-                return;
+                } else if (number == 5) {
+                    System.out.println("Thank you");
+                    return;
 
-            } else {
-                System.out.println("Please try again");
-                
-            }
-            
-             } catch (InputMismatchException p){
-                
-                 System.out.println("Please insert number only.");
-                 break;
-                 
+                } else {
+                    System.out.println("Please try again");
+
                 }
+
+            } catch (InputMismatchException p) {
+                System.out.println("Please insert number only.");
+                System.out.println("    ");
+              System.out.println("-----Please try again-----");
+              num.nextLine();
+            } 
             
-           
-        } while (number != 6);
-          
+            
+            
+            }while (number != 6);
+        } 
+
     }
 
-}

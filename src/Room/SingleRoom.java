@@ -5,7 +5,8 @@ import static Hotel.PricePerRoom.PRICE_SingleRoom;
 import Hotel.Status;
 import Room.BookedRoom;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
+import java.time.Month;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -20,8 +21,8 @@ public class SingleRoom {
 
     private static int runningId = 1;
     private String keycardId;
-    private LocalDateTime checkIn;
-    private LocalDateTime checkOut;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
     private double payedAmount;
     private Status keycardStatus;
 
@@ -52,14 +53,19 @@ public class SingleRoom {
 
     }
 
-    public void checkInForSingleRoom() {
-        this.keycardId = LocalDate.now() + "-" + runningId++;
-        LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
-        //this.checkIn = LocalDateTime.of(2020, Month.FEBRUARY, 28, 16, 10);
-        keycardStatus = keycardStatus.BOOKED;
+    public void checkInForSingleRoom(int days) {
+        System.out.println("How many days do u want: ");
+        days = input.nextInt();
+         this.keycardId = LocalDate.now() + "-" + runningId++;
+         keycardStatus = keycardStatus.BOOKED;
+         System.out.println("This is your keycard: "+Status.BOOKED );
+        //this.checkIn = LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+        //this.checkIn = LocalDate.of(2020, Month.APRIL, 24);
+        this.checkIn = LocalDate.now();
+        
     }
     public void checkOut(){
-        this.checkOut = LocalDateTime.now();
+        this.checkOut = LocalDate.now();
         this.payedAmount = calculateRoomDays();
         //System.out.println("Pay Amount:" +this.payedAmount);
         keycardStatus = keycardStatus.AVAILABLE;
@@ -69,10 +75,15 @@ public class SingleRoom {
  public long calculateRoomDays(){  
         
             long days = ChronoUnit.DAYS.between(checkIn, checkIn);
-//ChronoUnit.DAYS.between(checkIn, checkOut);
+    //ChronoUnit.DAYS.between(checkIn, checkOut);
         System.out.println("Days: "+days);
         return days * PRICE_SingleRoom;
         }
+
+    @Override
+    public String toString() {
+        return "SingleRoom{" + "countEmptyRooms=" + countEmptyRooms + ", maxrooms=" + maxrooms + ", rooms=" + rooms + ", input=" + input + ", keycardId=" + keycardId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", payedAmount=" + payedAmount + ", keycardStatus=" + keycardStatus + '}';
+    }
         
     }
 
