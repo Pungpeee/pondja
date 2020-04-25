@@ -9,17 +9,15 @@ import java.util.Scanner;
 
 public class DB {
 
-    
-
-    public static void testDB(String name, String sname) {
+    public static void testDB(String fname, String sname, String tor, int amr) {
 
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
-            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Hotel", "hotel", "123");
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/hotel", "hotel", "hotel");
             Statement stm = con.createStatement();
 
-            stm.executeUpdate("INSERT INTO hotel (name,surname) VALUES ('" + name + "','" + sname + "')");
-//stm.executeUpdate("INSERT INTO hotel VALUES ('" + name + "','" + sname + "' ,'" + tor + "'," + amr + " )");
+            //stm.executeUpdate("INSERT INTO hotel (firstname,surname) VALUES ('" + fname + "','" + sname + "')");
+            stm.executeUpdate("INSERT INTO hotel VALUES ('" + fname + "','" + sname + "' ,'" + tor + "'," + amr + " )");
             stm.close();
             con.close();
         } catch (ClassNotFoundException ex) {

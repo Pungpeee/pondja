@@ -23,9 +23,7 @@ public class Test {
         Scanner num = new Scanner(System.in);
 
         System.out.println("--------------------<< Booked Room >>----------------------");
-        g.setFirstname();
-        g.setSurname();
-        testDB(g.getFirstname(), g.getSurname());
+
         do {
             System.out.println("");
             System.out.println("Choose type of room you want");
@@ -39,21 +37,9 @@ public class Test {
             try {
                 int number;
                 number = num.nextInt();
+                g.setFirstname();
+                g.setSurname();
 
-//                switch(number){
-//                    case 1:
-//                        testDB(g.getFirstname(), g.getSurname(), "Single Room", 2);
-//                        break;
-//                    case 2:
-//                        testDB(g.getFirstname(), g.getSurname(), "Double Room", 3);
-//                        break;
-//                    case 3:
-//                        testDB(g.getFirstname(), g.getSurname(), "Quad Room", 4);
-//                        break;
-//                    case 4:
-//                        testDB(g.getFirstname(), g.getSurname(), "Suite Room", 5);
-//                        break;
-//                }
                 if (number == 1) {
                     System.out.println("Single Room");
                     sr.checkInSingleRoom();
@@ -81,7 +67,21 @@ public class Test {
                     System.out.println("Please try again");
 
                 }
-
+                switch (number) {
+                    case 1:
+                        testDB(g.getFirstname(), g.getSurname(), "Single Room", sr.countRooms);
+                        break;
+//                    case 2:
+//                        testDB(g.getFirstname(), g.getSurname(), "Double Room", );
+//                        break;
+//                    case 3:
+//                        testDB(g.getFirstname(), g.getSurname(), "Quad Room", );
+//                        break;
+//                    case 4:
+//                        testDB(g.getFirstname(), g.getSurname(), "Suite Room", );
+//                        break;
+                        
+                }
             } catch (InputMismatchException p) {
                 System.out.println("Please insert number only.");
                 System.out.println("    ");
