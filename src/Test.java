@@ -33,32 +33,48 @@ public class Test {
             System.out.println("4. Suite Room : Total " + se.maxrooms + " rooms");
             System.out.println("5. EXIT");
             System.out.print("You choose : ");
-
+                
             try {
                 int number;
                 number = num.nextInt();
-                g.setFirstname();
-                g.setSurname();
+                
 
                 if (number == 1) {
                     System.out.println("Single Room");
+                    g.setFirstname();
+                    g.setSurname();
                     sr.checkInSingleRoom();
 //                    sr.checkInForSingleRoom(1);
 //                    sr.checkOut();
 //                    sr.calculateRoomDays();
-
+                    
                 } else if (number == 2) {
                     System.out.println("Double Room");
+                    g.setFirstname();
+                    g.setSurname();
                     dr.checkInDoubleRoom();
-
+//                    sr.checkInForSingleRoom(1);
+//                    sr.checkOut();
+//                    sr.calculateRoomDays();
+                    
                 } else if (number == 3) {
                     System.out.println("Quad Room");
+                    g.setFirstname();
+                    g.setSurname();
                     qr.checkInQuadRoom();
-
+//                    sr.checkInForSingleRoom(1);
+//                    sr.checkOut();
+//                    sr.calculateRoomDays();
+                    
                 } else if (number == 4) {
                     System.out.println("Suite Room");
+                    g.setFirstname();
+                    g.setSurname();
                     se.checkInSuiteRoom();
-
+//                    sr.checkInForSingleRoom(1);
+//                    sr.checkOut();
+//                    sr.calculateRoomDays();
+                    
                 } else if (number == 5) {
                     System.out.println("Thank you");
                     return;
@@ -71,16 +87,15 @@ public class Test {
                     case 1:
                         testDB(g.getFirstname(), g.getSurname(), "Single Room", sr.countRooms);
                         break;
-//                    case 2:
-//                        testDB(g.getFirstname(), g.getSurname(), "Double Room", );
-//                        break;
-//                    case 3:
-//                        testDB(g.getFirstname(), g.getSurname(), "Quad Room", );
-//                        break;
-//                    case 4:
-//                        testDB(g.getFirstname(), g.getSurname(), "Suite Room", );
-//                        break;
-                        
+                    case 2:
+                        testDB(g.getFirstname(), g.getSurname(), "Double Room", dr.countRooms);
+                        break;
+                    case 3:
+                        testDB(g.getFirstname(), g.getSurname(), "Quad Room", qr.countRooms);
+                        break;
+                    case 4:
+                        testDB(g.getFirstname(), g.getSurname(), "Suite Room", se.countRooms);
+                        break;
                 }
             } catch (InputMismatchException p) {
                 System.out.println("Please insert number only.");

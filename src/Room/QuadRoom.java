@@ -11,9 +11,10 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class QuadRoom {
-    public int countEmptyRooms = 0;
+    public int countRooms = 0;
     public int maxrooms = 10;
     Scanner input = new Scanner(System.in);
+    public int total;
     
     private static int runningId=1;
     private String keycardId;
@@ -24,31 +25,38 @@ public class QuadRoom {
 
     public QuadRoom() {
     }
-
+    
+    public int getTotal() {
+       
+        return countRooms;
+    }
+    
     public void checkInQuadRoom() {
-        int maxrooms;
-        int countEmptyRooms;
+        int maxroom;
+        int countRooms;
         for (int total = 0; total < this.maxrooms; total++) {
             System.out.print(" Total : ");
             total = input.nextInt();
 
             if (total >= 1 && total <= 10) {
                 System.out.println("Status : " + Status.BOOKED);
-                maxrooms = this.maxrooms - total;
+                maxroom = this.maxrooms - total;
                 this.maxrooms = this.maxrooms - total;
-                System.out.println("NOW!! Total of room is AVAILABLE = " + maxrooms);
-                countEmptyRooms = this.countEmptyRooms + total;
-                this.countEmptyRooms = this.countEmptyRooms + total;
-                System.out.println("NOW!! Total of room is BOOKED = " + countEmptyRooms);
+                System.out.println("NOW!! Total of room is AVAILABLE = " + maxroom);
+                countRooms = this.countRooms + total;
+                this.countRooms = this.countRooms + total;
+                System.out.println("NOW!! Total of room is BOOKED = " + countRooms);
+               
                 return;
+                
             } else if (total > 10) {
                 System.out.println("You can't booked");
                 return;
             }
 
         }
-
     }
+        
      public void checkInForQuadRoom(){
         this.keycardId = LocalDate.now()+"-"+runningId++;
         LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
