@@ -1,7 +1,6 @@
     package DetailsOfBooked;
 
 import Hotel.Status;
-import Room.Hotel;
 
 
 public class Keycard {
