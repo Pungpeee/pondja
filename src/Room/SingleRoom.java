@@ -64,13 +64,12 @@ public class SingleRoom {
     }
 
     public void checkInForSingleRoom(int days) {
-        System.out.println("How many days do u want: ");
+    System.out.println("How many days do u want: ");
         days = input.nextInt();
-         this.keycardId = LocalDate.now() + "-" + runningId++;
-         keycardStatus = keycardStatus.BOOKED;
-         System.out.println("This is your keycard: "+Status.BOOKED );
-        //this.checkIn = LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
-        //this.checkIn = LocalDate.of(2020, Month.APRIL, 24);
+        System.out.println("---You have already booked for " + days + " Day---");
+        this.keycardId = LocalDate.now() + " NO. " + runningId++;
+        keycardStatus = keycardStatus.BOOKED;
+        System.out.println("This is your keycard: " + Status.BOOKED + " on " + keycardId);
         this.checkIn = LocalDate.now();
         
     }

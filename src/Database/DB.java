@@ -13,7 +13,7 @@ public class DB {
 
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
-            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/hotel", "hotel", "hotel");
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Hotel", "Hotel", "Hotel");
             Statement stm = con.createStatement();
 
             //stm.executeUpdate("INSERT INTO hotel (firstname,surname) VALUES ('" + fname + "','" + sname + "')");
@@ -30,7 +30,7 @@ public class DB {
 
     private static void testSelectFromHotelTable() {
 
-        try (Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Hotel", "hotel", "123");
+        try (Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Hotel", "Hotel", "Hotel");
                 Statement stmt = con.createStatement()) {
             ResultSet n_rs = stmt.executeQuery("SELECT * FROM hotel");
             while (n_rs.next()) {
