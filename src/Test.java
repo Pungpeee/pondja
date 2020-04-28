@@ -1,9 +1,10 @@
 import static Database.DB.testDB;
-import Hotel.BookedRoom;
+import RoomType.BookedRoom;
 import Hotel.Guest;
 import RoomType.CheckOut;
 import RoomType.DoubleRoom;
 import RoomType.QuadRoom;
+import RoomType.Room;
 import RoomType.SingleRoom;
 import RoomType.SuiteRoom;
 import java.util.InputMismatchException;
@@ -20,7 +21,7 @@ public class Test {
         DoubleRoom dr = new DoubleRoom();
         QuadRoom qr = new QuadRoom();
         SuiteRoom se = new SuiteRoom();
-//        BookedRoom br = new SingleRoom();
+        BookedRoom br = new SingleRoom();
         Scanner num = new Scanner(System.in);
 
         System.out.println("--------------------<< Booked Room >>----------------------");
@@ -43,12 +44,13 @@ public class Test {
 
                 if (number == 1) {
                     System.out.println("Single Room");
+                   
 //                    g.setFirstname();
 //                    g.setSurname();
                     sr.checkInSingleRoom();
                     sr.checkInForSingleRoom();
                     sr.calculateRoomDays();
-//                    br.checkOut();
+                    //sr.checkOut();
                     
                     
                 } else if (number == 2) {
@@ -56,9 +58,9 @@ public class Test {
                     g.setFirstname();
                     g.setSurname();
                     dr.checkInDoubleRoom();
-//                    sr.checkInForSingleRoom(1);
+                  
 //                    sr.checkOut();
-//                    sr.calculateRoomDays();
+                    dr.calculateRoomDays();
                     
                 } else if (number == 3) {
                     System.out.println("Quad Room");
@@ -80,7 +82,7 @@ public class Test {
                     
                 } else if (number == 5) {
                     sr.checkOut();
-
+                   
                 } else if (number == 6){
                     System.out.println("Thank you");
                     return;

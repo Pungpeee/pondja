@@ -1,7 +1,6 @@
 package RoomType;
 
 import DetailsOfBooked.KeycardStatus;
-import Hotel.BookedRoom;
 import Hotel.PricePerRoom;
 import static Hotel.PricePerRoom.PRICE_SingleRoom;
 import Hotel.Status;
@@ -13,11 +12,12 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Scanner;
 
-public class SingleRoom{
+public class SingleRoom extends BookedRoom{
     public static int number;
     public int countRooms = 0;
     public int maxrooms = 10;  
     public int total;
+    int days;
 
     public static int runningId = 1;
     public String keycardId;
@@ -25,25 +25,28 @@ public class SingleRoom{
     public LocalDate checkOut;
     public int payedAmount;
     public KeycardStatus keycardStatus;
-    public int days;
-    public SingleRoom(){
-        
+  
+
+    
+//    public SingleRoom(int total, int days,String keycardId, LocalDate checkIn) {
+//        super(total, days);
+//    }
+
+    public SingleRoom() {
     }
-    
-//    public SingleRoom(int total, String keycardId, LocalDate checkIn, LocalDate checkOut, int payedAmount, KeycardStatus keycardStatus, int days) {
-//        super(total, keycardId, checkIn, checkOut, payedAmount, keycardStatus, days);
-//    }
-    
-//    
-//    public int getTotal() {
-//        return countRooms;
-//    }
+
+    public SingleRoom(String keycardId, LocalDate checkIn, LocalDate checkOut, int payedAmount, KeycardStatus keycardStatus) {
+        super(keycardId, checkIn, checkOut, payedAmount, keycardStatus);
+    }
 
     public void checkInSingleRoom() {
         Scanner num = new Scanner(System.in);
         int maxroom;
         int countRooms;
+        
         for (int total = 0; total < this.maxrooms; total++) {
+            
+            this.maxrooms =maxrooms;
             System.out.print(" Total : ");
             total = num.nextInt();
 
@@ -55,7 +58,10 @@ public class SingleRoom{
                 countRooms = this.countRooms + total;
                 this.countRooms = this.countRooms + total;
                 System.out.println("NOW!! Total of room is BOOKED = " + countRooms);
-                System.out.println(this.countRooms);
+                //System.out.println(this.countRooms);
+                this.total = total;
+                this.maxrooms = maxroom;
+                this.countRooms = countRooms;
                 return;
 
             } else if (total > 10) {
@@ -103,6 +109,8 @@ public class SingleRoom{
             System.out.print("Total you pay: ");
                 int number ;
                 number = num.nextInt();
+                System.out.println();
+                this.maxrooms = this.maxrooms + total;
                 if (number == this.payedAmount) {
                     System.out.println("You successfully paid, thank you");
                     return;
@@ -114,7 +122,7 @@ public class SingleRoom{
         } while (number < this.payedAmount || number > this.payedAmount);
         keycardStatus = keycardStatus.LEAVE;
         System.out.println("Keycard Status : " + keycardStatus);
-//        maxrooms = maxrooms + this.countRooms;
+        maxrooms = maxrooms + this.countRooms;
         System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
     }
 }

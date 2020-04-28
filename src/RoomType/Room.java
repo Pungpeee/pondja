@@ -2,11 +2,14 @@ package RoomType;
 
 import DetailsOfBooked.KeycardStatus;
 import Hotel.PricePerRoom;
+import static RoomType.SingleRoom.number;
 import RoomType.TypeOfRoom;
 import java.time.LocalDate;
-import Hotel.BookedRoom;
+import java.util.Scanner;
         
 public class Room extends BookedRoom{
+     
+    
     private SingleRoom singleRoom;
     private DoubleRoom doubleRoom;
     private QuadRoom quadRoom;
@@ -60,4 +63,25 @@ public class Room extends BookedRoom{
     public String toString() {
         return "Room{" + "singleRoom=" + singleRoom + ", doubleRoom=" + doubleRoom + ", quadRoom=" + quadRoom + ", suiteRoom=" + suiteRoom + '}';
     }
+
+    @Override
+    public void checkInSingleRoom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void checkInForSingleRoom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void calculateRoomDays() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void checkOut() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
