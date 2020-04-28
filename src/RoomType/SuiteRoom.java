@@ -11,34 +11,41 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Scanner;
 
-public class SuiteRoom {
+public class SuiteRoom extends BookedRoom{
     public static int number;
     public int countRooms = 0;
-    public int maxrooms = 10;
-    
+    public int maxrooms = 10;  
+    public int total;
+    int days;
 
-    private static int runningId = 1;
-    private String keycardId;
+    public static int runningId = 1;
+    public String keycardId;
     public LocalDate checkIn;
     public LocalDate checkOut;
     public int payedAmount;
-    private KeycardStatus keycardStatus;
-    public int days;
+    public KeycardStatus keycardStatus;
+  
 
+    
+//    public SingleRoom(int total, int days,String keycardId, LocalDate checkIn) {
+//        super(total, days);
+//    }
 
     public SuiteRoom() {
     }
-    
-    public int getTotal() {
-       
-        return countRooms;
+
+    public SuiteRoom(String keycardId, LocalDate checkIn, LocalDate checkOut, int payedAmount, KeycardStatus keycardStatus) {
+        super(keycardId, checkIn, checkOut, payedAmount, keycardStatus);
     }
-    
+
     public void checkInSuiteRoom() {
         Scanner num = new Scanner(System.in);
         int maxroom;
         int countRooms;
+        
         for (int total = 0; total < this.maxrooms; total++) {
+            
+            this.maxrooms =maxrooms;
             System.out.print(" Total : ");
             total = num.nextInt();
 
@@ -50,7 +57,10 @@ public class SuiteRoom {
                 countRooms = this.countRooms + total;
                 this.countRooms = this.countRooms + total;
                 System.out.println("NOW!! Total of room is BOOKED = " + countRooms);
-
+                //System.out.println(this.countRooms);
+                this.total = total;
+                this.maxrooms = maxroom;
+                this.countRooms = countRooms;
                 return;
 
             } else if (total > 10) {
@@ -60,11 +70,11 @@ public class SuiteRoom {
 
         }
     }
-    
-     public void checkInForSuiteRoom(){
+
+    public void checkInForSuiteRoom() {
         Scanner num = new Scanner(System.in);
         int day;
-        System.out.println("How many days do u want: ");
+        System.out.print("How many days do u want: ");
         day = num.nextInt();
         days = days + day;
         System.out.println("---You have already booked for " + day + " Day---");
@@ -76,17 +86,17 @@ public class SuiteRoom {
         this.checkOut = this.checkIn.plusDays(day);
         System.out.println("You must pay and checkout in : " + this.checkOut);
     }
-     
-     public void calculateRoomDays(){  
+
+    public void calculateRoomDays() {
         int price;
-        price = (days * PRICE_SuiteRoom) * countRooms;
+        price = (days * PRICE_DoubleRoom) * countRooms;
 //        long days = ChronoUnit.DAYS.between(checkIn, checkIn);
         //ChronoUnit.DAYS.between(checkIn, checkOut);
         this.payedAmount = price;
         System.out.println("Price : " + price);
     }
-     
-     public void checkOut(){
+
+    public void checkOut() {
         Scanner num = new Scanner(System.in);
         this.checkOut = this.checkIn.plusDays(days);
         System.out.println("Date of you checkout : " + this.checkOut);
@@ -98,6 +108,8 @@ public class SuiteRoom {
             System.out.print("Total you pay: ");
                 int number ;
                 number = num.nextInt();
+                System.out.println();
+                this.maxrooms = this.maxrooms + total;
                 if (number == this.payedAmount) {
                     System.out.println("You successfully paid, thank you");
                     return;
@@ -110,7 +122,6 @@ public class SuiteRoom {
         keycardStatus = keycardStatus.LEAVE;
         System.out.println("Keycard Status : " + keycardStatus);
         maxrooms = maxrooms + this.countRooms;
-        System.out.println("NOW!! Total of room is AVAILABLE = " + maxrooms);
+        System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
     }
-    
 }

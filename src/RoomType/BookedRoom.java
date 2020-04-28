@@ -35,8 +35,6 @@ public abstract class BookedRoom implements PricePerRoom{
    
     
     public abstract void checkOut();
-    public abstract void checkInSingleRoom();
-    public abstract void checkInForSingleRoom();
     public abstract void calculateRoomDays();
     }
 

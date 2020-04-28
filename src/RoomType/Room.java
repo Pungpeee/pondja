@@ -51,29 +51,11 @@ public class Room extends BookedRoom{
         this.suiteRoom = suiteRoom;
     }
 
-    public int getTotal() {
-        return countRooms;
-    }
-
-    public void setTotal(int total) {
-        this.total = total;
-    }
-  
     @Override
     public String toString() {
         return "Room{" + "singleRoom=" + singleRoom + ", doubleRoom=" + doubleRoom + ", quadRoom=" + quadRoom + ", suiteRoom=" + suiteRoom + '}';
     }
-
-    @Override
-    public void checkInSingleRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void checkInForSingleRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
     @Override
     public void calculateRoomDays() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
