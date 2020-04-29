@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Guest {
 
-    private String firstname;
-    private String surname;
+   private String firstname;
+   private String surname;
     Scanner IP_name = new Scanner(System.in);
 
     public Guest() {

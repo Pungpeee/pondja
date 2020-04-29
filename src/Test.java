@@ -1,5 +1,7 @@
 
 import static Database.DB.testDB;
+import static DetailsOfBooked.Keycard.FileWriter;
+import Hotel.FileWrite;
 import RoomType.BookedRoom;
 import Hotel.Guest;
 import RoomType.CheckOut;
@@ -10,6 +12,7 @@ import RoomType.SingleRoom;
 import RoomType.SuiteRoom;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 
 public class Test {
 
@@ -22,14 +25,14 @@ public class Test {
         DoubleRoom dr = new DoubleRoom();
         QuadRoom qr = new QuadRoom();
         SuiteRoom se = new SuiteRoom();
-        BookedRoom br = new SingleRoom();
+        FileWrite fw = new FileWrite();
         Scanner num = new Scanner(System.in);
 
         System.out.println("--------------------<< Booked Room >>----------------------");
 
         do {
             System.out.println("");
-            System.out.println("--------------Choose menu do you want-----------------");
+            System.out.println("--------------Choose type of rooms do you want-----------------");
             System.out.println("1. Booked Single Room : Total " + sr.maxrooms + " rooms");
             System.out.println("2. Booked Double Room : Total " + dr.maxrooms + " rooms");
             System.out.println("3. Booked Quad Room : Total " + qr.maxrooms + " rooms");
@@ -43,39 +46,47 @@ public class Test {
                 number = num.nextInt();
 
                 if (number == 1) {
-                    System.out.println("Single Room");
-//                    g.setFirstname();
-//                    g.setSurname();
+                    System.out.println("    ");
+                    System.out.println("---Single Room---");
+                    g.setFirstname();
+                    g.setSurname();
                     sr.checkInSingleRoom();
                     sr.checkInForSingleRoom();
                     sr.calculateRoomDays();
-                    //sr.checkOut();
+                    
+                    
+                    
+                    
+                    
 
                 } else if (number == 2) {
-                    System.out.println("Double Room");
-//                    g.setFirstname();
-//                    g.setSurname();
+                    System.out.println("    ");
+                    System.out.println("---Double Room---");
+                    g.setFirstname();
+                    g.setSurname();
                     dr.checkInDoubleRoom();
                     dr.checkInForDoubleRoom();
-//                    sr.checkOut();
+
                     dr.calculateRoomDays();
 
                 } else if (number == 3) {
-                    System.out.println("Quad Room");
-//                    g.setFirstname();
-//                    g.setSurname();
+                    System.out.println("    ");
+                    System.out.println("---Quad Room---");
+                    g.setFirstname();
+                    g.setSurname();
                     qr.checkInQuadRoom();
                     qr.checkInForQuadRoom();
-//                    sr.checkOut();
+
                     qr.calculateRoomDays();
 
                 } else if (number == 4) {
-                    System.out.println("Suite Room");
-//                    g.setFirstname();
-//                    g.setSurname();
+                    System.out.println("    ");
+                    System.out.println("---Suite Room---");
+                    g.setFirstname();
+                    g.setSurname();
                     se.checkInSuiteRoom();
                     se.checkInForSuiteRoom();
-//                    sr.checkOut();
+
                     se.calculateRoomDays();
 
                 } else if (number == 5) {
@@ -85,7 +96,8 @@ public class Test {
                         System.out.println("3. CheckOut Quad Room");
                         System.out.println("4. CheckOut Suite Room");
                         System.out.print("Select you room type : ");
-                        int select;
+                        try{
+                             int select;
                         select = num.nextInt();
                         if (select == 1) {
                             sr.checkOut();
@@ -96,31 +108,37 @@ public class Test {
                         } else if (select == 4) {
                             se.checkOut();
                         }
+                        }catch(Exception e){
+                            System.out.println("    ");
+                            System.out.println("---Please choose the number that match to the room you want check out---");
+                        }
+                       
                     } while (number != 5);
                 
 
             }else if (number == 6) {
-                    System.out.println("Thank you");
+                    System.out.println("---Thank you---");
                     return;
 
                 } else {
-                    System.out.println("Please try again");
+                    System.out.println("---Please try again---");
                 }
             switch (number) {
                 case 1:
-                    testDB(g.getFirstname(), g.getSurname(), "Single Room", sr.countRooms);
+                    testDB(g.getFirstname(), g.getSurname(), "Single Room", sr.countRooms, sr.days);
                     break;
                 case 2:
-                    testDB(g.getFirstname(), g.getSurname(), "Double Room", dr.countRooms);
+                    testDB(g.getFirstname(), g.getSurname(), "Double Room", dr.countRooms, dr.days);
                     break;
                 case 3:
-                    testDB(g.getFirstname(), g.getSurname(), "Quad Room", qr.countRooms);
+                    testDB(g.getFirstname(), g.getSurname(), "Quad Room", qr.countRooms, qr.days);
                     break;
                 case 4:
-                    testDB(g.getFirstname(), g.getSurname(), "Suite Room", se.countRooms);
+                    testDB(g.getFirstname(), g.getSurname(), "Suite Room", se.countRooms, se.days);
                     break;
             }
         } catch (InputMismatchException p) {
+                System.out.println("    ");
                 System.out.println("Please insert number only.");
                 System.out.println("    ");
                 System.out.println("-----Please try again-----");

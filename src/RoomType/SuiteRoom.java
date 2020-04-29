@@ -16,10 +16,10 @@ public class SuiteRoom extends BookedRoom{
     public int countRooms = 0;
     public int maxrooms = 10;  
     public int total;
-    int days;
+    public int days;
 
-    public static int runningId = 1;
-    public String keycardId;
+    private static int runningId = 1;
+    private String keycardId;
     public LocalDate checkIn;
     public LocalDate checkOut;
     public int payedAmount;
@@ -89,7 +89,7 @@ public class SuiteRoom extends BookedRoom{
 
     public void calculateRoomDays() {
         int price;
-        price = (days * PRICE_DoubleRoom) * countRooms;
+        price = (days * PRICE_SuiteRoom) * countRooms;
 //        long days = ChronoUnit.DAYS.between(checkIn, checkIn);
         //ChronoUnit.DAYS.between(checkIn, checkOut);
         this.payedAmount = price;

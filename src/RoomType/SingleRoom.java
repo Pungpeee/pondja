@@ -4,6 +4,10 @@ import DetailsOfBooked.KeycardStatus;
 import Hotel.PricePerRoom;
 import static Hotel.PricePerRoom.PRICE_SingleRoom;
 import Hotel.Status;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.time.Month;
@@ -17,10 +21,11 @@ public class SingleRoom extends BookedRoom{
     public int countRooms = 0;
     public int maxrooms = 10;  
     public int total;
-    int days;
+    public int days;
+    
 
-    public static int runningId = 1;
-    public String keycardId;
+    private static int runningId = 1;
+    private String keycardId;
     public LocalDate checkIn;
     public LocalDate checkOut;
     public int payedAmount;
@@ -28,9 +33,7 @@ public class SingleRoom extends BookedRoom{
   
 
     
-//    public SingleRoom(int total, int days,String keycardId, LocalDate checkIn) {
-//        super(total, days);
-//    }
+
 
     public SingleRoom() {
     }
@@ -62,6 +65,7 @@ public class SingleRoom extends BookedRoom{
                 this.total = total;
                 this.maxrooms = maxroom;
                 this.countRooms = countRooms;
+                
                 return;
 
             } else if (total > 10) {
@@ -75,13 +79,15 @@ public class SingleRoom extends BookedRoom{
     public void checkInForSingleRoom() {
         Scanner num = new Scanner(System.in);
         int day;
-        System.out.print("How many days do u want: ");
+        System.out.println("    ");
+        System.out.print("How many days do you want: ");
         day = num.nextInt();
         days = days + day;
         System.out.println("---You have already booked for " + day + " Day---");
         this.keycardId = LocalDate.now() + " NO. " + runningId++;
         keycardStatus = keycardStatus.STAY;
         System.out.println("Keycard Status : " + keycardStatus);
+        
         System.out.println("This is your keycard: " + Status.BOOKED + " on " + keycardId);
         this.checkIn = LocalDate.now();
         this.checkOut = this.checkIn.plusDays(day);
@@ -125,4 +131,6 @@ public class SingleRoom extends BookedRoom{
         maxrooms = maxrooms + this.countRooms;
         System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
     }
+    
+    
 }
