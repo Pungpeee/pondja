@@ -2,6 +2,7 @@
 import static Database.DB.testDB;
 import static DetailsOfBooked.Keycard.FileWriter;
 import Hotel.FileWrite;
+import static Hotel.FileWrite.fileWriter;
 import RoomType.BookedRoom;
 import Hotel.Guest;
 import RoomType.CheckOut;
@@ -10,6 +11,7 @@ import RoomType.QuadRoom;
 import RoomType.Room;
 import RoomType.SingleRoom;
 import RoomType.SuiteRoom;
+import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -25,14 +27,14 @@ public class Test {
         DoubleRoom dr = new DoubleRoom();
         QuadRoom qr = new QuadRoom();
         SuiteRoom se = new SuiteRoom();
-        FileWrite fw = new FileWrite();
+        
         Scanner num = new Scanner(System.in);
 
         System.out.println("--------------------<< Booked Room >>----------------------");
 
         do {
             System.out.println("");
-            System.out.println("--------------Choose type of rooms do you want-----------------");
+            System.out.println("--------------Choose menu do you want-----------------");
             System.out.println("1. Booked Single Room : Total " + sr.maxrooms + " rooms");
             System.out.println("2. Booked Double Room : Total " + dr.maxrooms + " rooms");
             System.out.println("3. Booked Quad Room : Total " + qr.maxrooms + " rooms");
@@ -53,12 +55,8 @@ public class Test {
                     sr.checkInSingleRoom();
                     sr.checkInForSingleRoom();
                     sr.calculateRoomDays();
-                    
-                    
-                    
-                    
-                    
-
+                    fileWriter(g.getFirstname(),g.getSurname());
+                  
                 } else if (number == 2) {
                     System.out.println("    ");
                     System.out.println("---Double Room---");
@@ -66,8 +64,8 @@ public class Test {
                     g.setSurname();
                     dr.checkInDoubleRoom();
                     dr.checkInForDoubleRoom();
-
                     dr.calculateRoomDays();
+                    fileWriter(g.getFirstname(),g.getSurname());
 
                 } else if (number == 3) {
                     System.out.println("    ");
@@ -76,8 +74,8 @@ public class Test {
                     g.setSurname();
                     qr.checkInQuadRoom();
                     qr.checkInForQuadRoom();
-
                     qr.calculateRoomDays();
+                    fileWriter(g.getFirstname(),g.getSurname());
 
                 } else if (number == 4) {
                     System.out.println("    ");
@@ -86,8 +84,8 @@ public class Test {
                     g.setSurname();
                     se.checkInSuiteRoom();
                     se.checkInForSuiteRoom();
-
                     se.calculateRoomDays();
+                    fileWriter(g.getFirstname(),g.getSurname());
 
                 } else if (number == 5) {
                     do {

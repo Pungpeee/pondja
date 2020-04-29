@@ -6,26 +6,22 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import Hotel.Guest;
 import java.io.BufferedReader;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 
 
 public class FileWrite {
-    public static void main(String[] args) {
-        
-    }
    
-    public static void FileWriter(String firstname,String surname) {
+   
+    public static void fileWriter(String firstname,String surname) {
         
-        Scanner keyboard = new Scanner(System.in);
         try{
-        FileWriter w = new FileWriter("keycard.txt");
+        FileWriter w = new FileWriter("Keycard.txt");
         PrintWriter p = new PrintWriter(w);
-        
-        p.println("---This is your Keycard---");
-        firstname = keyboard.nextLine();
-        p.println("Name: "+firstname+"Surname: "+surname);
-        surname = keyboard.nextLine();
+        p.println("Name: "+firstname+" Surname: "+surname);
+        p.println("---This is your Keycard---"+"\t");
+        p.println("---Please bring it to the hotel staff. ---");
         
         p.close();
         
