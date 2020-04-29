@@ -5,7 +5,6 @@ import Hotel.FileWrite;
 import static Hotel.FileWrite.fileWriter;
 import RoomType.BookedRoom;
 import Hotel.Guest;
-import RoomType.CheckOut;
 import RoomType.DoubleRoom;
 import RoomType.QuadRoom;
 import RoomType.Room;
@@ -22,7 +21,6 @@ public class Test {
 
     public static void main(String[] args) {
         Guest g = new Guest();
-        CheckOut ch = new CheckOut();
         SingleRoom sr = new SingleRoom();
         DoubleRoom dr = new DoubleRoom();
         QuadRoom qr = new QuadRoom();
@@ -55,7 +53,7 @@ public class Test {
                     sr.checkInSingleRoom();
                     sr.checkInForSingleRoom();
                     sr.calculateRoomDays();
-                    fileWriter(g.getFirstname(),g.getSurname());
+                    fileWriter(g.getFirstname(),g.getSurname(),sr.checkOutTime());
                   
                 } else if (number == 2) {
                     System.out.println("    ");
@@ -65,7 +63,7 @@ public class Test {
                     dr.checkInDoubleRoom();
                     dr.checkInForDoubleRoom();
                     dr.calculateRoomDays();
-                    fileWriter(g.getFirstname(),g.getSurname());
+                    fileWriter(g.getFirstname(),g.getSurname(),dr.checkOutTime());
 
                 } else if (number == 3) {
                     System.out.println("    ");
@@ -75,7 +73,7 @@ public class Test {
                     qr.checkInQuadRoom();
                     qr.checkInForQuadRoom();
                     qr.calculateRoomDays();
-                    fileWriter(g.getFirstname(),g.getSurname());
+                    fileWriter(g.getFirstname(),g.getSurname(),qr.checkOutTime());
 
                 } else if (number == 4) {
                     System.out.println("    ");
@@ -85,7 +83,7 @@ public class Test {
                     se.checkInSuiteRoom();
                     se.checkInForSuiteRoom();
                     se.calculateRoomDays();
-                    fileWriter(g.getFirstname(),g.getSurname());
+                    fileWriter(g.getFirstname(),g.getSurname(),se.checkOutTime());
 
                 } else if (number == 5) {
                     do {

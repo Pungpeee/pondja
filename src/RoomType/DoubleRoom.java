@@ -124,4 +124,7 @@ public class DoubleRoom extends BookedRoom{
         maxrooms = maxrooms + this.countRooms;
         System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
     }
+     public LocalDate checkOutTime(){
+        return checkOut;
+    }
 }

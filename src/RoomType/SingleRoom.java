@@ -108,9 +108,7 @@ public class SingleRoom extends BookedRoom{
         this.checkOut = this.checkIn.plusDays(days);
         System.out.println("Date of you checkout : " + this.checkOut);
         System.out.println("You must pay : " + this.payedAmount);
-        
-
-        do {
+         do {
             System.out.println("Pay");
             System.out.print("Total you pay: ");
                 int number ;
@@ -131,6 +129,8 @@ public class SingleRoom extends BookedRoom{
         maxrooms = maxrooms + this.countRooms;
         System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
     }
-    
+    public LocalDate checkOutTime(){
+        return checkOut;
+    }
     
 }
