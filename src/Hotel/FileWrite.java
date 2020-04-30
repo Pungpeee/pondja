@@ -29,20 +29,41 @@ public class FileWrite {
             e.printStackTrace();
         }
     }
-
-//    public static void FileReader() {
-//        try {
-//            FileReader r = new FileReader("keycard.txt");
-//            int data;
-//            while ((data = r.read()) != -1) {
-//                
+//     public static void fileWriter2(String firstname, String surname, LocalDate checkOut) {
 //
-//            }
-//        } catch (FileNotFoundException ex) {
+//        try {
+//            FileWriter w = new FileWriter("Keycard2.txt");
+//            PrintWriter p = new PrintWriter(w);
+//            p.println("Name: " + firstname + " Surname: " + surname);
+//            p.println("Your checkout :  " + checkOut);
+//            p.println("---This is your Keycard---" + "\t");
+//            p.println("---Please bring it to the hotel staff. ---");
+//            p.close();
 //
 //        } catch (IOException e) {
-//
+//            System.out.println("Error");
+//            e.printStackTrace();
 //        }
-//
 //    }
+//    
+
+    public static void FileReader() {
+        try {
+            FileReader r = new FileReader("keycard2.txt");
+            BufferedReader br = new BufferedReader(r);
+            String str;
+            str = br.readLine();
+            while (str != null) {
+                System.out.println(str);
+                str = br.readLine();
+            }
+            br.close();
+
+        } catch (FileNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
 }

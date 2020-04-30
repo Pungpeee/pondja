@@ -10,6 +10,7 @@ import RoomType.QuadRoom;
 import RoomType.Room;
 import RoomType.SingleRoom;
 import RoomType.SuiteRoom;
+import java.io.FileWriter;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -25,6 +26,7 @@ public class Test {
         DoubleRoom dr = new DoubleRoom();
         QuadRoom qr = new QuadRoom();
         SuiteRoom se = new SuiteRoom();
+        FileWrite fw = new FileWrite();
         
         Scanner num = new Scanner(System.in);
 
@@ -114,6 +116,7 @@ public class Test {
 
             }else if (number == 6) {
                     System.out.println("---Thank you---");
+                    fw.FileReader();
                     return;
 
                 } else {
@@ -143,4 +146,25 @@ public class Test {
 
     }while (number != 7);
     }
+    //
+//                       _oo0oo_
+//                      o8888888o
+//                      88" . "88
+//                      (| -_- |)
+//                      0\  =  /0
+//                    ___/`---'\___
+//                  .' \\|     |// '.
+//                 / \\|||  :  |||// \
+//                / _||||| -:- |||||- \
+//               |   | \\\  -  /// |   |
+//               | \_|  ''\---/''  |_/ |
+//               \  .-\__  '-'  ___/-. /
+//             ___'. .'  /--.--\  `. .'___
+//          ."" '<  `.___\_<|>_/___.' >' "".
+//         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+//         \  \ `_.   \_ __\ /__ _/   .-` /  /
+//     =====`-.____`.___ \_____/___.-`___.-'=====
+//                       `=---='
+//
+//              Buddha never bug !
 }
