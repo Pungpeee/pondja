@@ -5,7 +5,6 @@ import Hotel.FileWrite;
 import static Hotel.FileWrite.fileWriter;
 import RoomType.BookedRoom;
 import Hotel.Guest;
-import RoomType.CheckOut;
 import RoomType.DoubleRoom;
 import RoomType.QuadRoom;
 import RoomType.Room;
@@ -22,7 +21,6 @@ public class Test {
 
     public static void main(String[] args) {
         Guest g = new Guest();
-        CheckOut ch = new CheckOut();
         SingleRoom sr = new SingleRoom();
         DoubleRoom dr = new DoubleRoom();
         QuadRoom qr = new QuadRoom();

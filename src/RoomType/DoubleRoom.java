@@ -34,10 +34,6 @@ public class DoubleRoom extends BookedRoom{
     public DoubleRoom() {
     }
 
-    public DoubleRoom(String keycardId, LocalDate checkIn, LocalDate checkOut, int payedAmount, KeycardStatus keycardStatus) {
-        super(keycardId, checkIn, checkOut, payedAmount, keycardStatus);
-    }
-
     public void checkInDoubleRoom() {
         Scanner num = new Scanner(System.in);
         int maxroom;

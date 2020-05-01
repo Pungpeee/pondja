@@ -6,7 +6,7 @@ public class Guest {
 
    private String firstname;
    private String surname;
-    Scanner IP_name = new Scanner(System.in);
+   Scanner IP_name = new Scanner(System.in);
 
     public Guest() {
 

@@ -3,11 +3,10 @@ package RoomType;
 import DetailsOfBooked.KeycardStatus;
 import Hotel.PricePerRoom;
 import static RoomType.SingleRoom.number;
-import RoomType.TypeOfRoom;
 import java.time.LocalDate;
 import java.util.Scanner;
         
-public class Room extends BookedRoom{
+public class Room{
      
     
     private SingleRoom singleRoom;
@@ -54,16 +53,6 @@ public class Room extends BookedRoom{
     @Override
     public String toString() {
         return "Room{" + "singleRoom=" + singleRoom + ", doubleRoom=" + doubleRoom + ", quadRoom=" + quadRoom + ", suiteRoom=" + suiteRoom + '}';
-    }
-    
-    @Override
-    public void calculateRoomDays() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void checkOut() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

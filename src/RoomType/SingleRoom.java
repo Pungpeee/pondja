@@ -30,17 +30,11 @@ public class SingleRoom extends BookedRoom{
     public LocalDate checkOut;
     public int payedAmount;
     public KeycardStatus keycardStatus;
-  
-
-    
 
 
     public SingleRoom() {
     }
 
-    public SingleRoom(String keycardId, LocalDate checkIn, LocalDate checkOut, int payedAmount, KeycardStatus keycardStatus) {
-        super(keycardId, checkIn, checkOut, payedAmount, keycardStatus);
-    }
 
     public void checkInSingleRoom() {
         Scanner num = new Scanner(System.in);

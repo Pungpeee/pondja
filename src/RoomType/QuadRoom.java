@@ -24,18 +24,9 @@ public class QuadRoom extends BookedRoom{
     public LocalDate checkOut;
     public int payedAmount;
     public KeycardStatus keycardStatus;
-  
 
-    
-//    public SingleRoom(int total, int days,String keycardId, LocalDate checkIn) {
-//        super(total, days);
-//    }
 
     public QuadRoom() {
-    }
-
-    public QuadRoom(String keycardId, LocalDate checkIn, LocalDate checkOut, int payedAmount, KeycardStatus keycardStatus) {
-        super(keycardId, checkIn, checkOut, payedAmount, keycardStatus);
     }
 
     public void checkInQuadRoom() {
