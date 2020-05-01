@@ -11,14 +11,15 @@ import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class FileWrite {
+public class FileWrite implements PricePerRoom {
 
-    public static void fileWriter(String firstname, String surname, LocalDate checkOut) {
+    public static void fileWriter(String firstname, String surname, LocalDate checkOut, String tof) {
 
         try {
             FileWriter w = new FileWriter("Keycard.txt");
             PrintWriter p = new PrintWriter(w);
             p.println("Name: " + firstname + " Surname: " + surname);
+            p.println("Type of room : " + tof);
             p.println("Your checkout :  " + checkOut);
             p.println("---This is your Keycard---" + "\t");
             p.println("---Please bring it to the hotel staff. ---");
@@ -29,27 +30,45 @@ public class FileWrite {
             e.printStackTrace();
         }
     }
-//     public static void fileWriter2(String firstname, String surname, LocalDate checkOut) {
-//
-//        try {
-//            FileWriter w = new FileWriter("Keycard2.txt");
-//            PrintWriter p = new PrintWriter(w);
-//            p.println("Name: " + firstname + " Surname: " + surname);
-//            p.println("Your checkout :  " + checkOut);
-//            p.println("---This is your Keycard---" + "\t");
-//            p.println("---Please bring it to the hotel staff. ---");
-//            p.close();
-//
-//        } catch (IOException e) {
-//            System.out.println("Error");
-//            e.printStackTrace();
-//        }
-//    }
-//    
+
+    public static void fileWriter2(String firstname, String surname, LocalDate checkOut, int payedAmount, int countRooms, String tof,int days) {
+
+        try {
+            FileWriter w = new FileWriter("Receipt.txt");
+            PrintWriter p = new PrintWriter(w);
+            p.println("-----RECEIPT-----");
+            p.println("Name: " + firstname + " Surname: " + surname);
+            p.println("Your checkout date :  " + checkOut);
+            p.println("--Detail--");
+            p.println("Type of room : " + tof);
+            String a = new String("Single Room");
+            String b = new String("Double Room");
+            String c = new String("Quad Room");
+            String d = new String("Suite Room");
+            if (a.equalsIgnoreCase(tof)) {
+                p.println("Price : " + PRICE_SingleRoom + "/room");
+            } else if (b.equalsIgnoreCase(tof)) {
+                p.println("Price : " + PRICE_DoubleRoom + "/room");
+            } else if (c.equalsIgnoreCase(tof)) {
+                p.println("Price : " + PRICE_QuadRoom + "/room");
+            } else if (d.equalsIgnoreCase(tof)) {
+                p.println("Price : " + PRICE_SuiteRoom + "/room");
+            }
+            p.println("The number of rooms you have reserved : " + countRooms);
+            p.println("Number of days booked : "+days);
+            p.println("Total amount paid : " + payedAmount+" Baht");
+
+            p.close();
+
+        } catch (IOException e) {
+            System.out.println("Error");
+            e.printStackTrace();
+        }
+    }
 
     public static void FileReader() {
         try {
-            FileReader r = new FileReader("keycard2.txt");
+            FileReader r = new FileReader("Receipt.txt");
             BufferedReader br = new BufferedReader(r);
             String str;
             str = br.readLine();
@@ -66,4 +85,5 @@ public class FileWrite {
         }
 
     }
+
 }

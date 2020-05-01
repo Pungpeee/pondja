@@ -15,6 +15,7 @@ import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Scanner;
+import Hotel.FileWrite;
 
 public class SingleRoom extends BookedRoom{
     public static int number;
@@ -124,6 +125,7 @@ public class SingleRoom extends BookedRoom{
                     System.out.println("-----Please try again-----");
                 }
         } while (number < this.payedAmount || number > this.payedAmount);
+        
         keycardStatus = keycardStatus.LEAVE;
         System.out.println("Keycard Status : " + keycardStatus);
         maxrooms = maxrooms + this.countRooms;
@@ -132,5 +134,6 @@ public class SingleRoom extends BookedRoom{
     public LocalDate checkOutTime(){
         return checkOut;
     }
+
     
 }
