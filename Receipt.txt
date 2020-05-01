@@ -1,0 +1,9 @@
+-----RECEIPT-----
+Name: qqwqw Surname: asd
+Your checkout date :  2020-05-06
+--Detail--
+Type of room : Suite Room
+Price : 2500/room
+The number of rooms you have reserved : 3
+Number of days booked : 5
+Total amount paid : 37500 Baht
