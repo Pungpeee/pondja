@@ -19,7 +19,12 @@ import java.util.Scanner;
 public class Test {
 
     private static int number;
-
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
     public static void main(String[] args) {
         Guest g = new Guest();
         SingleRoom sr = new SingleRoom();
@@ -35,13 +40,13 @@ public class Test {
         do {
             System.out.println("");
             System.out.println("--------------Choose menu do you want-----------------");
-            System.out.println("1. Booked Single Room : Total " + sr.maxrooms + " rooms");
-            System.out.println("2. Booked Double Room : Total " + dr.maxrooms + " rooms");
-            System.out.println("3. Booked Quad Room : Total " + qr.maxrooms + " rooms");
-            System.out.println("4. Booked Suite Room : Total " + se.maxrooms + " rooms");
-            System.out.println("5. Check Out");
-            System.out.println("6. EXIT");
-            System.out.print("You choose : ");
+            System.out.println(ANSI_CYAN + "1. Booked Single Room : Total " + sr.maxrooms + " rooms" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "2. Booked Double Room : Total " + dr.maxrooms + " rooms" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "3. Booked Quad Room : Total " + qr.maxrooms + " rooms" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "4. Booked Suite Room : Total " + se.maxrooms + " rooms" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "5. Check Out" + ANSI_RESET);
+            System.out.println(ANSI_RED + "6. EXIT" + ANSI_RESET);
+            System.out.print(ANSI_YELLOW + "You choose : " + ANSI_RESET);
 
             try {
                 int number;
@@ -50,7 +55,7 @@ public class Test {
                 if (number == 1) {
 
                     System.out.println("    ");
-                    System.out.println("---Single Room---");
+                    System.out.println(ANSI_CYAN + "---Single Room---" + ANSI_RESET);
                     g.setFirstname();
                     g.setSurname();
                     sr.checkInSingleRoom();
@@ -60,7 +65,7 @@ public class Test {
 
                 } else if (number == 2) {
                     System.out.println("    ");
-                    System.out.println("---Double Room---");
+                    System.out.println(ANSI_CYAN + "---Double Room---" + ANSI_RESET);
                     g.setFirstname();
                     g.setSurname();
                     dr.checkInDoubleRoom();
@@ -70,7 +75,7 @@ public class Test {
 
                 } else if (number == 3) {
                     System.out.println("    ");
-                    System.out.println("---Quad Room---");
+                    System.out.println(ANSI_CYAN + "---Quad Room---" + ANSI_RESET);
                     g.setFirstname();
                     g.setSurname();
                     qr.checkInQuadRoom();
@@ -80,7 +85,7 @@ public class Test {
 
                 } else if (number == 4) {
                     System.out.println("    ");
-                    System.out.println("---Suite Room---");
+                    System.out.println(ANSI_CYAN + "---Suite Room---" + ANSI_RESET);
                     g.setFirstname();
                     g.setSurname();
                     se.checkInSuiteRoom();
@@ -91,11 +96,11 @@ public class Test {
                 } else if (number == 5) {
                     do {
                         System.out.println("--------Check Out--------");
-                        System.out.println("1. CheckOut Single Room");
-                        System.out.println("2. CheckOut Double Room");
-                        System.out.println("3. CheckOut Quad Room");
-                        System.out.println("4. CheckOut Suite Room");
-                        System.out.print("Select your room type : ");
+                        System.out.println(ANSI_CYAN + "1. CheckOut Single Room : " + sr.maxrooms + " rooms" + ANSI_RESET);
+                        System.out.println(ANSI_CYAN + "2. CheckOut Double Room : " + dr.maxrooms + " rooms" + ANSI_RESET);
+                        System.out.println(ANSI_CYAN + "3. CheckOut Quad Room : " +  qr.maxrooms + " rooms" + ANSI_RESET);
+                        System.out.println(ANSI_CYAN + "4. CheckOut Suite Room : " + se.maxrooms + " rooms" + ANSI_RESET);
+                        System.out.print(ANSI_YELLOW + "Select your room type : " + ANSI_RESET);
                         try{
                             int select;
                             select = num.nextInt();
@@ -119,11 +124,11 @@ public class Test {
                                 fileWriter2(g.getFirstname(), g.getSurname(), se.checkOutTime(), se.payedAmount, se.countRooms, "Suite Room", se.days);
                                 fw.FileReader();
                             } else {
-                                System.out.println("---Please choose the number that match to the room you want check out---");
+                                System.out.println(ANSI_RED + "---Please choose the number that match to the room you want check out---" + ANSI_RESET);
                                 
                             }        
                         }catch(Exception e){
-                                System.out.println("---Please try again---");
+                                System.out.println(ANSI_RED + "---Please try again---" + ANSI_RESET);
                                 num.nextLine();
                         }
                                 
@@ -132,13 +137,12 @@ public class Test {
                     
 
                 } else if (number == 6) {
-
-                    System.out.println("---Thank you---");
+                    System.out.println(ANSI_GREEN + "-----Thank you-----" + ANSI_RESET);
 
                     return;
 
                 } else {
-                    System.out.println("---Please try again---");
+                    System.out.println(ANSI_RED + "---Please try again---" + ANSI_RESET);
                 }
                 
                 switch (number) {
@@ -157,10 +161,8 @@ public class Test {
 
                 }
             } catch (InputMismatchException p) {
-                System.out.println("    ");
-                System.out.println("Please insert number only.");
-                System.out.println("    ");
-                System.out.println("-----Please try again-----");
+                System.out.println(ANSI_RED + "----Please insert number only----" + ANSI_RESET);
+                System.out.println(ANSI_RED + "-----Please try again-----" + ANSI_RESET);
                 num.nextLine();
             }
 

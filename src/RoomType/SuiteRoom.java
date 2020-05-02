@@ -23,6 +23,10 @@ public class SuiteRoom extends BookedRoom{
     public LocalDate checkOut;
     public int payedAmount;
     public KeycardStatus keycardStatus;
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
 
 
     public SuiteRoom() {
@@ -43,10 +47,10 @@ public class SuiteRoom extends BookedRoom{
                 System.out.println("Status : " + Status.BOOKED);
                 maxroom = this.maxrooms - total;
                 this.maxrooms = this.maxrooms - total;
-                System.out.println("NOW!! Total of room is AVAILABLE = " + maxroom);
+                System.out.println(ANSI_YELLOW + "NOW!! Total of room is AVAILABLE = " + ANSI_RESET + maxroom );
                 countRooms = this.countRooms + total;
                 this.countRooms = this.countRooms + total;
-                System.out.println("NOW!! Total of room is BOOKED = " + countRooms);
+                System.out.println(ANSI_YELLOW + "NOW!! Total of room is BOOKED = " + ANSI_RESET + countRooms);
                 //System.out.println(this.countRooms);
                 this.total = total;
                 this.maxrooms = maxroom;
@@ -101,14 +105,13 @@ public class SuiteRoom extends BookedRoom{
             if (number == this.payedAmount) {
                 keycardStatus = keycardStatus.LEAVE;
                 System.out.println("Keycard Status : " + keycardStatus);
-                System.out.println("You successfully paid, thank you");
+                System.out.println(ANSI_GREEN + "-----You successfully paid, Thank You-----\n" + ANSI_RESET);
                 maxrooms = maxrooms + this.countRooms;
-                System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
+                System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms));
                 return;
             } else if (number < this.payedAmount || number > this.payedAmount) {
-                System.out.println("You will have to pay the specified amount");
-                System.out.println("");
-                System.out.println("-----Please try again-----");
+                System.out.println(ANSI_RED + "----You will have to pay the specified amount----" + ANSI_RESET);
+                System.out.println(ANSI_RED + "-----Please try again-----" + ANSI_RESET);
             }  
         } while (number < this.payedAmount || number > this.payedAmount);
     }

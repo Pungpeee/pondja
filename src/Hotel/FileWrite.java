@@ -13,6 +13,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class FileWrite implements PricePerRoom {
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    
 
     public static void fileWriter(String firstname, String surname, LocalDate checkOut, String tof) {
 
@@ -37,10 +41,10 @@ public class FileWrite implements PricePerRoom {
         try {
             FileWriter w = new FileWriter("Receipt.txt");
             PrintWriter p = new PrintWriter(w);
-            p.println("-----RECEIPT-----");
+            p.println(ANSI_CYAN + "-----RECEIPT-----\n" + ANSI_RESET);
             p.println("Name: " + firstname + " Surname: " + surname);
             p.println("Your checkout date :  " + checkOut);
-            p.println("--Detail--");
+            p.println(ANSI_CYAN + "-----Detail-----\n" + ANSI_RESET);
             p.println("Type of room : " + tof);
             String a = new String("Single Room");
             String b = new String("Double Room");
@@ -57,7 +61,7 @@ public class FileWrite implements PricePerRoom {
             }
             p.println("The number of rooms you have reserved : " + countRooms);
             p.println("Number of days booked : "+days);
-            p.println("Total amount paid : " + payedAmount+" Baht");
+            p.println(ANSI_GREEN + "Total amount paid : " + payedAmount+" Baht" + ANSI_RESET);
 
             p.close();
 
