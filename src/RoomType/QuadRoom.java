@@ -55,6 +55,7 @@ public class QuadRoom extends BookedRoom{
                 this.total = total;
                 this.maxrooms = maxroom;
                 this.countRooms = countRooms;
+                checkInForQuadRoom();
                 return;
 
             } else if (total > 10) {

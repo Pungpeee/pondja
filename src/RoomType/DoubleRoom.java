@@ -60,6 +60,7 @@ public class DoubleRoom extends BookedRoom{
                 this.total = total;
                 this.maxrooms = maxroom;
                 this.countRooms = countRooms;
+                checkInForDoubleRoom();
                 return;
 
             } else if (total > 10) {

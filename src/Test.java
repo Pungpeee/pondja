@@ -59,7 +59,6 @@ public class Test {
                     g.setFirstname();
                     g.setSurname();
                     sr.checkInSingleRoom();
-                    sr.checkInForSingleRoom();
                     sr.calculateRoomDays();
                     fileWriter(g.getFirstname(), g.getSurname(), sr.checkOutTime(), "Single Room");
 
@@ -69,7 +68,6 @@ public class Test {
                     g.setFirstname();
                     g.setSurname();
                     dr.checkInDoubleRoom();
-                    dr.checkInForDoubleRoom();
                     dr.calculateRoomDays();
                     fileWriter(g.getFirstname(), g.getSurname(), dr.checkOutTime(), "Double Room");
 
@@ -79,7 +77,6 @@ public class Test {
                     g.setFirstname();
                     g.setSurname();
                     qr.checkInQuadRoom();
-                    qr.checkInForQuadRoom();
                     qr.calculateRoomDays();
                     fileWriter(g.getFirstname(), g.getSurname(), qr.checkOutTime(), "Quad Room");
 
@@ -89,7 +86,6 @@ public class Test {
                     g.setFirstname();
                     g.setSurname();
                     se.checkInSuiteRoom();
-                    se.checkInForSuiteRoom();
                     se.calculateRoomDays();
                     fileWriter(g.getFirstname(), g.getSurname(), se.checkOutTime(), "Suite Room");
 

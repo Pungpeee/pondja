@@ -49,23 +49,27 @@ public class SingleRoom extends BookedRoom {
             total = num.nextInt();
 
             if (total >= 1 && total <= 10) {
-                System.out.println("Status : " + Status.BOOKED);
+                  System.out.println("Status : " + Status.BOOKED);
                 maxroom = this.maxrooms - total;
                 this.maxrooms = this.maxrooms - total;
-                System.out.println(ANSI_YELLOW + "NOW!! Total of room is AVAILABLE = " + ANSI_RESET + maxroom );
+                System.out.println(ANSI_YELLOW + "NOW!! Total of room is AVAILABLE = " + ANSI_RESET + maxroom);
                 countRooms = this.countRooms + total;
                 this.countRooms = this.countRooms + total;
                 System.out.println(ANSI_YELLOW + "NOW!! Total of room is BOOKED = " + ANSI_RESET + countRooms);
                 this.total = total;
                 this.maxrooms = maxroom;
                 this.countRooms = countRooms;
+                checkInForSingleRoom();
+                
                 return;
+         
 
             } else if (total > 10) {
                 System.out.println("You can't booked");
-                return;
+                
             }
-        }
+          }
+        
     }
 
     public void checkInForSingleRoom() {
@@ -115,7 +119,7 @@ public class SingleRoom extends BookedRoom {
             } else if (number < this.payedAmount || number > this.payedAmount) {
                 System.out.println(ANSI_RED + "----You will have to pay the specified amount----" + ANSI_RESET);
                 System.out.println(ANSI_RED + "-----Please try again-----" + ANSI_RESET);
-            }  
+            }
         } while (number < this.payedAmount || number > this.payedAmount);
     }
 

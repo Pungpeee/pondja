@@ -55,6 +55,7 @@ public class SuiteRoom extends BookedRoom{
                 this.total = total;
                 this.maxrooms = maxroom;
                 this.countRooms = countRooms;
+                checkInForSuiteRoom();
                 return;
 
             } else if (total > 10) {
