@@ -97,7 +97,7 @@ public class Test {
                         System.out.println("3. CheckOut Quad Room");
                         System.out.println("4. CheckOut Suite Room");
                         System.out.print("Select your room type : ");
-                        
+                        try{
                             int select;
                             select = sec.nextInt();
                             if (select == 1) {
@@ -120,9 +120,11 @@ public class Test {
                                 fileWriter2(g.getFirstname(), g.getSurname(), se.checkOutTime(), se.payedAmount, se.countRooms, "Suite Room", se.days);
                                 fw.FileReader();
                             } else {
-                                System.out.println("---Please choose the number that match to the room you want check out---");
+                                System.out.println("---Please try again---");
                             }        
-                    
+                        }catch(Exception e){
+                            System.out.println("---Please choose the number that match to the room you want check out---");
+                        }
                                 
                          
                     } while (number > 0 && number < 5);
