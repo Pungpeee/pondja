@@ -91,28 +91,26 @@ public class QuadRoom extends BookedRoom{
         this.checkOut = this.checkIn.plusDays(days);
         System.out.println("Date of you checkout : " + this.checkOut);
         System.out.println("You must pay : " + this.payedAmount);
-        
-
         do {
             System.out.println("Pay");
             System.out.print("Total you pay: ");
-                int number ;
-                number = num.nextInt();
-                System.out.println();
-                this.maxrooms = this.maxrooms + total;
-                if (number == this.payedAmount) {
-                    System.out.println("You successfully paid, thank you");
-                    return;
-                } else if (number < this.payedAmount || number > this.payedAmount) {
-                    System.out.println("You will have to pay the specified amount");
-                    System.out.println("");
-                    System.out.println("-----Please try again-----");
-                }
+            int number;
+            number = num.nextInt();
+            System.out.println();
+
+            if (number == this.payedAmount) {
+                keycardStatus = keycardStatus.LEAVE;
+                System.out.println("Keycard Status : " + keycardStatus);
+                System.out.println("You successfully paid, thank you");
+                maxrooms = maxrooms + this.countRooms;
+                System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
+                return;
+            } else if (number < this.payedAmount || number > this.payedAmount) {
+                System.out.println("You will have to pay the specified amount");
+                System.out.println("");
+                System.out.println("-----Please try again-----");
+            }  
         } while (number < this.payedAmount || number > this.payedAmount);
-        keycardStatus = keycardStatus.LEAVE;
-        System.out.println("Keycard Status : " + keycardStatus);
-        maxrooms = maxrooms + this.countRooms;
-        System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
     }
      public LocalDate checkOutTime(){
         return checkOut;

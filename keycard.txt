@@ -1,5 +1,5 @@
-Name: y Surname: u
-Type of room : Single Room
-Your checkout :  2020-05-03
+Name: y Surname: t
+Type of room : Suite Room
+Your checkout :  2020-05-05
 ---This is your Keycard---	
 ---Please bring it to the hotel staff. ---
