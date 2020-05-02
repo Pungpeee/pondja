@@ -1,7 +1,6 @@
 package RoomType;
 
-import DetailsOfBooked.KeycardStatus;
-import Hotel.PricePerRoom;
+import Keycard.KeycardStatus;
 import static RoomType.SingleRoom.number;
 import java.time.LocalDate;
 import java.util.Scanner;

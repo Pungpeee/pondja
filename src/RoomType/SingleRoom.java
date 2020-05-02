@@ -1,8 +1,7 @@
 package RoomType;
 
-import DetailsOfBooked.KeycardStatus;
-import Hotel.PricePerRoom;
-import static Hotel.PricePerRoom.PRICE_SingleRoom;
+import Keycard.KeycardStatus;
+import static RoomType.PricePerRoom.PRICE_SingleRoom;
 import Hotel.Status;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -43,7 +42,6 @@ public class SingleRoom extends BookedRoom{
         int countRooms;
         
         for (int total = 0; total < this.maxrooms; total++) {
-            
             this.maxrooms =maxrooms;
             System.out.print(" Total : ");
             total = num.nextInt();
@@ -56,19 +54,16 @@ public class SingleRoom extends BookedRoom{
                 countRooms = this.countRooms + total;
                 this.countRooms = this.countRooms + total;
                 System.out.println("NOW!! Total of room is BOOKED = " + countRooms);
-                //System.out.println(this.countRooms);
                 this.total = total;
                 this.maxrooms = maxroom;
                 this.countRooms = countRooms;
-                
                 return;
 
             } else if (total > 10) {
                 System.out.println("You can't booked");
                 return;
             }
-
-        }
+         }
     }
 
     public void checkInForSingleRoom() {
@@ -92,8 +87,6 @@ public class SingleRoom extends BookedRoom{
     public void calculateRoomDays() {
         int price;
         price = (days * PRICE_SingleRoom) * countRooms;
-//        long days = ChronoUnit.DAYS.between(checkIn, checkIn);
-        //ChronoUnit.DAYS.between(checkIn, checkOut);
         this.payedAmount = price;
         System.out.println("Price : " + price);
     }
@@ -109,7 +102,7 @@ public class SingleRoom extends BookedRoom{
                 int number ;
                 number = num.nextInt();
                 System.out.println();
-                this.maxrooms = this.maxrooms + total;
+
                 if (number == this.payedAmount) {
                     System.out.println("You successfully paid, thank you");
                     return;
@@ -123,6 +116,7 @@ public class SingleRoom extends BookedRoom{
         keycardStatus = keycardStatus.LEAVE;
         System.out.println("Keycard Status : " + keycardStatus);
         maxrooms = maxrooms + this.countRooms;
+        this.maxrooms = this.maxrooms + this.total;
         System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms + this.countRooms));
     }
     public LocalDate checkOutTime(){

@@ -1,4 +1,4 @@
-package Hotel;
+package RoomType;
 
 public interface PricePerRoom {
 

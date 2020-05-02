@@ -1,6 +1,6 @@
 
 import static Database.DB.testDB;
-import static DetailsOfBooked.Keycard.FileWriter;
+
 import Hotel.FileWrite;
 import static Hotel.FileWrite.fileWriter;
 import static Hotel.FileWrite.fileWriter2;
@@ -29,6 +29,7 @@ public class Test {
         FileWrite fw = new FileWrite();
 
         Scanner num = new Scanner(System.in);
+        Scanner sec = new Scanner(System.in);
 
         System.out.println("--------------------<< Booked Room >>----------------------");
 
@@ -90,34 +91,42 @@ public class Test {
 
                 } else if (number == 5) {
                     do {
+                        System.out.println("--------Check Out--------");
                         System.out.println("1. CheckOut Single Room");
                         System.out.println("2. CheckOut Double Room");
                         System.out.println("3. CheckOut Quad Room");
                         System.out.println("4. CheckOut Suite Room");
                         System.out.print("Select your room type : ");
-                        try {
+                        
                             int select;
-                            select = num.nextInt();
+                            select = sec.nextInt();
                             if (select == 1) {
                                 sr.checkOut();
                                 fileWriter2(g.getFirstname(), g.getSurname(), sr.checkOutTime(), sr.payedAmount, sr.countRooms, "Single Room", sr.days);
+                                fw.FileReader();
+
                             } else if (select == 2) {
                                 dr.checkOut();
                                 fileWriter2(g.getFirstname(), g.getSurname(), dr.checkOutTime(), dr.payedAmount, dr.countRooms, "Double Room", dr.days);
+                                fw.FileReader();
+
                             } else if (select == 3) {
                                 qr.checkOut();
                                 fileWriter2(g.getFirstname(), g.getSurname(), qr.checkOutTime(), qr.payedAmount, qr.countRooms, "Quad Room", qr.days);
+                                fw.FileReader();
+
                             } else if (select == 4) {
                                 se.checkOut();
                                 fileWriter2(g.getFirstname(), g.getSurname(), se.checkOutTime(), se.payedAmount, se.countRooms, "Suite Room", se.days);
-                            }
-                            fw.FileReader();
-                        } catch (Exception e) {
-                            System.out.println("    ");
-                            System.out.println("---Please choose the number that match to the room you want check out---");
-                        }
-
-                    } while (number != 5);
+                                fw.FileReader();
+                            } else {
+                                System.out.println("---Please choose the number that match to the room you want check out---");
+                            }        
+                    
+                                
+                         
+                    } while (number > 0 && number < 5);
+                    
 
                 } else if (number == 6) {
 
@@ -128,6 +137,7 @@ public class Test {
                 } else {
                     System.out.println("---Please try again---");
                 }
+                
                 switch (number) {
                     case 1:
                         testDB(g.getFirstname(), g.getSurname(), "Single Room", sr.countRooms, sr.days);
