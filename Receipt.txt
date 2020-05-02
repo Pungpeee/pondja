@@ -1,9 +1,9 @@
 -----RECEIPT-----
-Name: data Surname: base
-Your checkout date :  2020-05-04
+Name: i Surname: o
+Your checkout date :  2020-05-05
 --Detail--
 Type of room : Quad Room
 Price : 1500/room
-The number of rooms you have reserved : 1
-Number of days booked : 2
-Total amount paid : 3000 Baht
+The number of rooms you have reserved : 3
+Number of days booked : 3
+Total amount paid : 13500 Baht

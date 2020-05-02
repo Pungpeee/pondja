@@ -29,7 +29,6 @@ public class Test {
         FileWrite fw = new FileWrite();
 
         Scanner num = new Scanner(System.in);
-        Scanner sec = new Scanner(System.in);
 
         System.out.println("--------------------<< Booked Room >>----------------------");
 
@@ -99,7 +98,7 @@ public class Test {
                         System.out.print("Select your room type : ");
                         try{
                             int select;
-                            select = sec.nextInt();
+                            select = num.nextInt();
                             if (select == 1) {
                                 sr.checkOut();
                                 fileWriter2(g.getFirstname(), g.getSurname(), sr.checkOutTime(), sr.payedAmount, sr.countRooms, "Single Room", sr.days);
@@ -120,10 +119,12 @@ public class Test {
                                 fileWriter2(g.getFirstname(), g.getSurname(), se.checkOutTime(), se.payedAmount, se.countRooms, "Suite Room", se.days);
                                 fw.FileReader();
                             } else {
-                                System.out.println("---Please try again---");
+                                System.out.println("---Please choose the number that match to the room you want check out---");
+                                
                             }        
                         }catch(Exception e){
-                            System.out.println("---Please choose the number that match to the room you want check out---");
+                                System.out.println("---Please try again---");
+                                num.nextLine();
                         }
                                 
                          
