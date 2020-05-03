@@ -1,11 +1,11 @@
 [36m-----RECEIPT-----
 [0m
-Name: y Surname: t
-Your checkout date :  2020-05-09
+Name: i Surname: o
+Your checkout date :  2020-05-04
 [36m-----Detail-----
 [0m
 Type of room : Single Room
 Price : 700/room
-The number of rooms you have reserved : 3
-Number of days booked : 6
-[32mTotal amount paid : 25200 Baht[0m
+The number of rooms you have reserved : 2
+Number of days booked : 1
+[32mTotal amount paid : 1400 Baht[0m

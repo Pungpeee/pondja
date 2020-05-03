@@ -15,6 +15,10 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Scanner;
 import Hotel.FileWrite;
+import static RoomType.QuadRoom.ANSI_RESET;
+import static RoomType.QuadRoom.ANSI_YELLOW;
+import static RoomType.SuiteRoom.ANSI_RED;
+import static RoomType.SuiteRoom.ANSI_RESET;
 
 public class SingleRoom extends BookedRoom {
 
@@ -68,7 +72,7 @@ public class SingleRoom extends BookedRoom {
          
 
             } else if (total > 10) {
-                System.out.println("You can't booked");
+                System.out.println(ANSI_RED + "----You can't booked.----" + ANSI_RESET);
                 
             }
           }
@@ -107,8 +111,8 @@ public class SingleRoom extends BookedRoom {
         System.out.println("Date of you checkout : " + this.checkOut);
         System.out.println("You must pay : " + this.payedAmount);
         do {
-            System.out.println("Pay");
-            System.out.print("Total you pay: ");
+            System.out.println("---Payment---");
+            System.out.print(ANSI_YELLOW + "Total you pay = " + ANSI_RESET);
             int number;
             number = num.nextInt();
             System.out.println();

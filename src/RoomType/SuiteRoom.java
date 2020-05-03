@@ -59,7 +59,7 @@ public class SuiteRoom extends BookedRoom{
                 return;
 
             } else if (total > 10) {
-                System.out.println("You can't booked");
+                System.out.println(ANSI_RED + "----You can't booked.----" + ANSI_RESET);
                 return;
             }
 
@@ -69,7 +69,7 @@ public class SuiteRoom extends BookedRoom{
     public void checkInForSuiteRoom() {
         Scanner num = new Scanner(System.in);
         int day;
-        System.out.print("How many days do u want: ");
+        System.out.print("How many days do you want: ");
         day = num.nextInt();
         days = days + day;
         System.out.println("---You have already booked for " + day + " Day---");
@@ -95,8 +95,8 @@ public class SuiteRoom extends BookedRoom{
         System.out.println("Date of you checkout : " + this.checkOut);
         System.out.println("You must pay : " + this.payedAmount);
         do {
-            System.out.println("Pay");
-            System.out.print("Total you pay: ");
+            System.out.println("---Payment---");
+            System.out.print(ANSI_YELLOW + "Total you pay = " + ANSI_RESET);
             int number;
             number = num.nextInt();
             System.out.println();

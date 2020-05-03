@@ -17,7 +17,7 @@ public class DB {
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Hotel", "hotel", "hotel");  
             Statement stm = con.createStatement();
 
-            //stm.executeUpdate("INSERT INTO hotel (firstname,surname) VALUES ('" + fname + "','" + sname + "')");
+            
             stm.executeUpdate("INSERT INTO hotel VALUES ('" + fname + "','" + sname + "' ,'" + tor + "'," + amr + "," + day +"  )");
             stm.close();
             con.close();
@@ -45,8 +45,6 @@ public class DB {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-//        for (int j = 0; j < i; j++) {s
-//            System.out.println(names[j]);
-//        }
+
     }
 }
