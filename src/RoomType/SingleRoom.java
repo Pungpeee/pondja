@@ -118,6 +118,7 @@ public class SingleRoom extends BookedRoom {
                 System.out.println("Keycard Status : " + keycardStatus);
                 System.out.println(ANSI_GREEN + "-----You successfully paid, Thank You-----\n" + ANSI_RESET);
                 maxrooms = maxrooms + this.countRooms;
+                this.countRooms = this.countRooms - total;
                 System.out.println("NOW!! Total of room is AVAILABLE = " + (maxrooms));
                 return;
             } else if (number < this.payedAmount || number > this.payedAmount) {
