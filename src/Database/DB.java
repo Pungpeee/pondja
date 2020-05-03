@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 
 
-public class DB {  
+public class DB {    //วณิศรา 62130500079
 
     public static void testDB(String fname, String sname, String tor, int amr,int day) {
 

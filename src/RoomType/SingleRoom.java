@@ -43,7 +43,7 @@ public class SingleRoom extends BookedRoom {
     public SingleRoom() {
     }
 
-    public void checkInSingleRoom() {
+    public void checkInSingleRoom() {                       //ญานิกา 62130500020
         Scanner num = new Scanner(System.in);
         int maxroom;
         int countRooms;
@@ -78,7 +78,7 @@ public class SingleRoom extends BookedRoom {
         
     }
 
-    public void checkInForSingleRoom() {
+    public void checkInForSingleRoom() {      //วณิศรา 62130500079
         Scanner num = new Scanner(System.in);
         int day;
         System.out.println("    ");
@@ -96,7 +96,7 @@ public class SingleRoom extends BookedRoom {
         System.out.println("You must pay and checkout in : " + this.checkOut);
     }
 
-    public void calculateRoomDays() {
+    public void calculateRoomDays() {               //วรัทยา 62130500083
         int price;
         price = (days * PRICE_SingleRoom) * countRooms;
         this.payedAmount = price;
@@ -104,7 +104,7 @@ public class SingleRoom extends BookedRoom {
     }
 
     @Override
-    public void checkOut() {
+    public void checkOut() {                        //ญานิกา 62130500020
         Scanner num = new Scanner(System.in);
         this.checkOut = this.checkIn.plusDays(days);
         System.out.println("Date of you checkout : " + this.checkOut);

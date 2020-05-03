@@ -4,7 +4,7 @@ import Hotel.Status;
 
 
 
-public class Keycard {
+public class Keycard {     //ญานิกา 62130500020
     private Status status;
 
     public Keycard() {

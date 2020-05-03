@@ -1,11 +1,11 @@
 [36m-----RECEIPT-----
 [0m
-Name: pond Surname: pungpeee
-Your checkout date :  2020-05-07
+Name: Taylor Surname: Swift
+Your checkout date :  2020-05-05
 [36m-----Detail-----
 [0m
 Type of room : Single Room
 Price : 700/room
-The number of rooms you have reserved : 2
-Number of days booked : 4
-[32mTotal amount paid : 11200 Baht[0m
+The number of rooms you have reserved : 1
+Number of days booked : 2
+[32mTotal amount paid : 1400 Baht[0m

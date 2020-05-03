@@ -1,6 +1,6 @@
 package RoomType;
 
-public interface PricePerRoom {
+public interface PricePerRoom {  //วรัทยา 62130500083
 
     public static final int PRICE_SingleRoom = 700;
     public static final int PRICE_DoubleRoom = 900;

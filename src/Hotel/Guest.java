@@ -2,7 +2,7 @@ package Hotel;
 
 import java.util.Scanner;
 
-public class Guest {
+public class Guest {    //วณิศรา 62130500079
 
    private String firstname;
    private String surname;

@@ -12,13 +12,13 @@ import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class FileWrite implements PricePerRoom {
+public class FileWrite implements PricePerRoom {   //วรัทยา 62130500083
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_GREEN = "\u001B[32m";
     
 
-    public static void fileWriter(String firstname, String surname, LocalDate checkOut, String tof) {
+    public static void fileWriter(String firstname, String surname, LocalDate checkOut, String tof) {  
 
         try {
             FileWriter w = new FileWriter("Keycard.txt");
