@@ -25,6 +25,7 @@ public class Test {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_YELLOW = "\u001B[33m";
+    
     public static void main(String[] args) {
         Guest g = new Guest();
         SingleRoom sr = new SingleRoom();

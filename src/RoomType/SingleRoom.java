@@ -65,8 +65,7 @@ public class SingleRoom extends BookedRoom {
                 this.maxrooms = maxroom;
                 this.countRooms = countRooms;
                 checkInForSingleRoom();
-                System.out.println(total);
-                System.out.println(countRooms);
+                
                 
                 return;
          
