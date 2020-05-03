@@ -18,18 +18,19 @@ import Hotel.FileWrite;
 
 public class SingleRoom extends BookedRoom {
 
-    public static int number;
-    public int countRooms = 0;
-    public int maxrooms = 10;
-    public int total;
-    public int days;
+    private int number;
+    private int countRooms = 0;
+    private int maxrooms = 10;
+    private int total;
+    private int days;
 
     private static int runningId = 1;
     private String keycardId;
-    public LocalDate checkIn;
-    public LocalDate checkOut;
-    public int payedAmount;
-    public KeycardStatus keycardStatus;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
+    private int payedAmount;
+    private KeycardStatus keycardStatus;
+    
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
@@ -60,6 +61,8 @@ public class SingleRoom extends BookedRoom {
                 this.maxrooms = maxroom;
                 this.countRooms = countRooms;
                 checkInForSingleRoom();
+                System.out.println(total);
+                System.out.println(countRooms);
                 
                 return;
          
@@ -97,6 +100,7 @@ public class SingleRoom extends BookedRoom {
         System.out.println("Price : " + price);
     }
 
+    @Override
     public void checkOut() {
         Scanner num = new Scanner(System.in);
         this.checkOut = this.checkIn.plusDays(days);
@@ -121,6 +125,22 @@ public class SingleRoom extends BookedRoom {
                 System.out.println(ANSI_RED + "-----Please try again-----" + ANSI_RESET);
             }
         } while (number < this.payedAmount || number > this.payedAmount);
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public int getPayedAmount() {
+        return payedAmount;
+    }
+    
+    public int getDays(){
+        return days;
+    }
+    
+    public int getMaxrooms(){
+        return maxrooms;
     }
 
     public LocalDate checkOutTime() {

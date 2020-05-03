@@ -11,18 +11,18 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class QuadRoom extends BookedRoom{
-    public static int number;
-    public int countRooms = 0;
-    public int maxrooms = 10;  
-    public int total;
-    public int days;
+    private static int number;
+    private int countRooms = 0;
+    private int maxrooms = 10;  
+    private int total;
+    private int days;
 
     private static int runningId = 1;
     private String keycardId;
-    public LocalDate checkIn;
-    public LocalDate checkOut;
-    public int payedAmount;
-    public KeycardStatus keycardStatus;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
+    private int payedAmount;
+    private KeycardStatus keycardStatus;
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
@@ -119,4 +119,23 @@ public class QuadRoom extends BookedRoom{
      public LocalDate checkOutTime(){
         return checkOut;
     }
+
+    public int getMaxrooms() {
+        return maxrooms;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public int getPayedAmount() {
+        return payedAmount;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    
+     
 }

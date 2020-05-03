@@ -1,5 +1,5 @@
-Name: pond Surname: boat
+Name: r Surname: t
 Type of room : Quad Room
-Your checkout :  null
+Your checkout :  2020-05-06
 ---This is your Keycard---	
 ---Please bring it to the hotel staff. ---

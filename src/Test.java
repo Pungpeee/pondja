@@ -40,10 +40,10 @@ public class Test {
         do {
             System.out.println("");
             System.out.println("--------------Choose menu do you want-----------------");
-            System.out.println(ANSI_CYAN + "1. Booked Single Room : Total " + sr.maxrooms + " rooms" + ANSI_RESET);
-            System.out.println(ANSI_CYAN + "2. Booked Double Room : Total " + dr.maxrooms + " rooms" + ANSI_RESET);
-            System.out.println(ANSI_CYAN + "3. Booked Quad Room : Total " + qr.maxrooms + " rooms" + ANSI_RESET);
-            System.out.println(ANSI_CYAN + "4. Booked Suite Room : Total " + se.maxrooms + " rooms" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "1. Booked Single Room : Total " + sr.getMaxrooms() + " rooms" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "2. Booked Double Room : Total " + dr.getMaxrooms() + " rooms" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "3. Booked Quad Room : Total " + qr.getMaxrooms() + " rooms" + ANSI_RESET);
+            System.out.println(ANSI_CYAN + "4. Booked Suite Room : Total " + se.getMaxrooms() + " rooms" + ANSI_RESET);
             System.out.println(ANSI_CYAN + "5. Check Out" + ANSI_RESET);
             System.out.println(ANSI_RED + "6. EXIT" + ANSI_RESET);
             System.out.print(ANSI_YELLOW + "You choose : " + ANSI_RESET);
@@ -92,32 +92,32 @@ public class Test {
                 } else if (number == 5) {
                     do {
                         System.out.println("--------Check Out--------");
-                        System.out.println(ANSI_CYAN + "1. CheckOut Single Room : " + sr.maxrooms + " rooms" + ANSI_RESET);
-                        System.out.println(ANSI_CYAN + "2. CheckOut Double Room : " + dr.maxrooms + " rooms" + ANSI_RESET);
-                        System.out.println(ANSI_CYAN + "3. CheckOut Quad Room : " +  qr.maxrooms + " rooms" + ANSI_RESET);
-                        System.out.println(ANSI_CYAN + "4. CheckOut Suite Room : " + se.maxrooms + " rooms" + ANSI_RESET);
+                        System.out.println(ANSI_CYAN + "1. CheckOut Single Room : " + sr.getMaxrooms() + " rooms" + ANSI_RESET);
+                        System.out.println(ANSI_CYAN + "2. CheckOut Double Room : " + dr.getMaxrooms() + " rooms" + ANSI_RESET);
+                        System.out.println(ANSI_CYAN + "3. CheckOut Quad Room : " +  qr.getMaxrooms() + " rooms" + ANSI_RESET);
+                        System.out.println(ANSI_CYAN + "4. CheckOut Suite Room : " + se.getMaxrooms() + " rooms" + ANSI_RESET);
                         System.out.print(ANSI_YELLOW + "Select your room type : " + ANSI_RESET);
                         try{
                             int select;
                             select = num.nextInt();
                             if (select == 1) {
                                 sr.checkOut();
-                                fileWriter2(g.getFirstname(), g.getSurname(), sr.checkOutTime(), sr.payedAmount, sr.countRooms, "Single Room", sr.days);
+                                fileWriter2(g.getFirstname(), g.getSurname(), sr.checkOutTime(), sr.getPayedAmount(), sr.getTotal(), "Single Room", sr.getDays());
                                 fw.FileReader();
 
                             } else if (select == 2) {
                                 dr.checkOut();
-                                fileWriter2(g.getFirstname(), g.getSurname(), dr.checkOutTime(), dr.payedAmount, dr.countRooms, "Double Room", dr.days);
+                                fileWriter2(g.getFirstname(), g.getSurname(), dr.checkOutTime(), dr.getPayedAmount(), dr.getTotal(), "Double Room", dr.getDays());
                                 fw.FileReader();
 
                             } else if (select == 3) {
                                 qr.checkOut();
-                                fileWriter2(g.getFirstname(), g.getSurname(), qr.checkOutTime(), qr.payedAmount, qr.countRooms, "Quad Room", qr.days);
+                                fileWriter2(g.getFirstname(), g.getSurname(), qr.checkOutTime(), qr.getPayedAmount(), qr.getTotal(), "Quad Room", qr.getDays());
                                 fw.FileReader();
 
                             } else if (select == 4) {
                                 se.checkOut();
-                                fileWriter2(g.getFirstname(), g.getSurname(), se.checkOutTime(), se.payedAmount, se.countRooms, "Suite Room", se.days);
+                                fileWriter2(g.getFirstname(), g.getSurname(), se.checkOutTime(), se.getPayedAmount(), se.getTotal(), "Suite Room", se.getDays());
                                 fw.FileReader();
                             } else {
                                 System.out.println(ANSI_RED + "---Please choose the number that match to the room you want check out---" + ANSI_RESET);
@@ -143,16 +143,16 @@ public class Test {
                 
                 switch (number) {
                     case 1:
-                        testDB(g.getFirstname(), g.getSurname(), "Single Room", sr.countRooms, sr.days);
+                        testDB(g.getFirstname(), g.getSurname(), "Single Room", sr.getTotal(), sr.getDays());
                         break;
                     case 2:
-                        testDB(g.getFirstname(), g.getSurname(), "Double Room", dr.countRooms, dr.days);
+                        testDB(g.getFirstname(), g.getSurname(), "Double Room", dr.getTotal(), dr.getDays());
                         break;
                     case 3:
-                        testDB(g.getFirstname(), g.getSurname(), "Quad Room", qr.countRooms, qr.days);
+                        testDB(g.getFirstname(), g.getSurname(), "Quad Room", qr.getTotal(), qr.getDays());
                         break;
                     case 4:
-                        testDB(g.getFirstname(), g.getSurname(), "Suite Room", se.countRooms, se.days);
+                        testDB(g.getFirstname(), g.getSurname(), "Suite Room", se.getTotal(), se.getDays());
                         break;
 
                 }

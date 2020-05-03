@@ -1,11 +1,11 @@
 [36m-----RECEIPT-----
 [0m
-Name: Taylor Surname: Swift
-Your checkout date :  2020-05-05
+Name: ta Surname: er
+Your checkout date :  2020-05-07
 [36m-----Detail-----
 [0m
-Type of room : Single Room
-Price : 700/room
-The number of rooms you have reserved : 1
-Number of days booked : 2
-[32mTotal amount paid : 1400 Baht[0m
+Type of room : Quad Room
+Price : 1500/room
+The number of rooms you have reserved : 2
+Number of days booked : 4
+[32mTotal amount paid : 24000 Baht[0m
